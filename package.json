@@ -1,0 +1,20 @@
+{
+  "name": "rueegger.me",
+  "version": "2.0.0",
+  "description": "Modern personal portfolio website - Samuel Rüegger",
+  "scripts": {
+    "dev": "npx tailwindcss -i ./assets/src/input.css -o ./public/css/style.css --watch",
+    "build": "npx tailwindcss -i ./assets/src/input.css -o ./public/css/style.css --minify"
+  },
+  "keywords": [
+    "portfolio",
+    "tailwindcss",
+    "php"
+  ],
+  "author": "Samuel Rüegger",
+  "license": "MIT",
+  "devDependencies": {
+    "tailwindcss": "^3.4.0",
+    "@tailwindcss/typography": "^0.5.10"
+  }
+}

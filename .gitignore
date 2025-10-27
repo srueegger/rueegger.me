@@ -1,0 +1,31 @@
+# Dependencies
+/node_modules
+/vendor
+
+# Build files
+/public/css/*.css
+!/public/css/.gitkeep
+/assets/build
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# IDE
+.idea
+.vscode
+*.swp
+*.swo
+*~
+
+# DDEV
+.ddev/.gitignore
+.ddev/commands/
+
+# Environment
+.env
+.env.local
+
+# Logs
+*.log
+npm-debug.log*
