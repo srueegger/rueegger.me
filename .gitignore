@@ -1,6 +1,7 @@
-# Dependencies
+# Dependencies (lock files are kept for reproducibility)
 /node_modules
 /vendor
+# composer.lock and package-lock.json are tracked for consistent dependencies
 
 # Build files
 /public/css/*.css
