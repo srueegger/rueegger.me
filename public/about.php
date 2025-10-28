@@ -97,8 +97,8 @@ $html = $content ? $parser->parse($content) : '';
                     <div class="principle-card group bg-[#1a1f3a] border-2 border-[#3a4f7a] rounded-lg p-6 transition-all duration-300 hover:border-[#ff9966] hover:shadow-lg hover:shadow-[#ff9966]/20 hover:-translate-y-1"
                          style="animation-delay: <?= $index * 100 ?>ms;">
                         <div class="flex flex-col items-center text-center">
-                            <div class="principle-icon w-16 h-16 rounded-full bg-[#0a0e27] border-2 border-[#ff9966] flex items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:rotate-12 group-hover:shadow-lg group-hover:shadow-[#ff9966]/50 mb-4">
-                                <i class="<?= $principle['icon'] ?> text-[#ff9966] text-2xl"></i>
+                            <div class="principle-icon w-20 h-20 rounded-full bg-[#0a0e27] border-2 border-[#ff9966] flex items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:rotate-12 group-hover:shadow-lg group-hover:shadow-[#ff9966]/50 mb-4" style="aspect-ratio: 1/1;">
+                                <i class="<?= $principle['icon'] ?> text-[#ff9966] text-3xl"></i>
                             </div>
                             <h3 class="text-[#ff9966] font-bold text-sm uppercase tracking-wider mb-2 group-hover:text-[#ffb000] transition-colors">
                                 <?= e($principle['title']) ?>
