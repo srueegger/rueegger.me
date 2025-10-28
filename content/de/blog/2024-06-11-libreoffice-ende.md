@@ -3,7 +3,7 @@ title: "Das Ende von LibreOffice: Warum es an modernen Anforderungen scheitert"
 date: "2024-06-11"
 excerpt: "LibreOffice befindet sich im Wartungsmodus. Keine KI-Integration, keine Kollaboration, keine Mobile-Apps – die Office-Suite der 90er Jahre in einer modernen Arbeitswelt."
 tags: ["LibreOffice", "Office", "Produktivität"]
-image: "/images/libreoffice.webp"
+image: "/images/blog/libreoffice.webp"
 ---
 
 # Das Ende von LibreOffice: Warum es an modernen Anforderungen scheitert

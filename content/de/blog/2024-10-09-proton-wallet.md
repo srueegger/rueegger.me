@@ -3,7 +3,7 @@ title: "Proton Wallet im Test: Ein merkwürdiges Produkt"
 date: "2024-10-09"
 excerpt: "Als langjähriger Proton-Nutzer teste ich die neue Proton Wallet Beta. Trotz Protons Fokus auf Privatsphäre unterstützt die Wallet nur Bitcoin – eine Kryptowährung ohne inherente Datenschutzfunktionen."
 tags: ["Bitcoin", "Proton", "Wallet", "Datenschutz"]
-image: "/images/proton-wallet.webp"
+image: "/images/blog/proton-wallet.webp"
 ---
 
 # Proton Wallet im Test: Ein merkwürdiges Produkt
