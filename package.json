@@ -6,9 +6,10 @@
     "dev": "npm run dev:css & npm run dev:js",
     "dev:css": "npx tailwindcss -i ./assets/src/input.css -o ./public/css/style.css --watch",
     "dev:js": "cp ./assets/src/main.js ./public/js/main.js",
-    "build": "npm run build:css && npm run build:js",
+    "build": "npm run build:css && npm run build:js && npm run build:sitemap",
     "build:css": "npx tailwindcss -i ./assets/src/input.css -o ./public/css/style.css --minify",
-    "build:js": "npx terser ./assets/src/main.js -o ./public/js/main.js --compress --mangle"
+    "build:js": "npx terser ./assets/src/main.js -o ./public/js/main.js --compress --mangle",
+    "build:sitemap": "php generate-sitemap.php"
   },
   "keywords": [
     "portfolio",
