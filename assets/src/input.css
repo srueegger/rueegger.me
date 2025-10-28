@@ -3,9 +3,9 @@
 @tailwind utilities;
 
 @layer base {
-  /* LCARS/Nerdy Color Scheme */
+  /* LCARS/Nerdy Color Scheme with Light/Dark Support */
   :root {
-    /* LCARS-inspired colors */
+    /* LCARS-inspired colors (same in both modes) */
     --lcars-orange: #ff9966;
     --lcars-purple: #cc99cc;
     --lcars-blue: #9999ff;
@@ -13,35 +13,61 @@
     --lcars-yellow: #ffcc99;
     --lcars-red: #ff6666;
 
-    /* Terminal colors */
+    /* Terminal colors (same in both modes) */
     --terminal-green: #00ff00;
     --terminal-amber: #ffb000;
     --terminal-cyan: #00ffff;
+  }
 
-    /* Base colors */
-    --bg-main: #0a0e27;
-    --bg-secondary: #1a1f3a;
-    --bg-tertiary: #2a2f4a;
-    --text-primary: #e0e6ff;
-    --text-secondary: #a0b0d0;
-    --border-color: #3a4f7a;
+  /* Light mode colors */
+  :root {
+    --bg-main: #f0f4f8;
+    --bg-secondary: #e8ecf0;
+    --bg-tertiary: #d8dce0;
+    --bg-panel: #ffffff;
+    --text-primary: #1a1f3a;
+    --text-secondary: #4a5568;
+    --border-color: #cbd5e0;
+    --terminal-bg: #2d3748;
+    --terminal-border: #00aa00;
+    --terminal-text: #00cc00;
+    --scanline-opacity: 0.03;
+  }
+
+  /* Dark mode colors */
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg-main: #0a0e27;
+      --bg-secondary: #1a1f3a;
+      --bg-tertiary: #2a2f4a;
+      --bg-panel: #1a1f3a;
+      --text-primary: #e0e6ff;
+      --text-secondary: #a0b0d0;
+      --border-color: #3a4f7a;
+      --terminal-bg: #000000;
+      --terminal-border: #00ff00;
+      --terminal-text: #00ff00;
+      --scanline-opacity: 0.15;
+    }
   }
 
   body {
-    @apply bg-[#0a0e27] text-[#e0e6ff] font-mono antialiased;
+    background-color: var(--bg-main);
+    color: var(--text-primary);
+    @apply font-mono antialiased;
     background-image:
       repeating-linear-gradient(
         0deg,
-        rgba(0, 0, 0, 0.15),
-        rgba(0, 0, 0, 0.15) 1px,
+        rgba(0, 0, 0, var(--scanline-opacity)),
+        rgba(0, 0, 0, var(--scanline-opacity)) 1px,
         transparent 1px,
         transparent 2px
       );
     background-size: 100% 2px;
   }
 
-  /* CRT Monitor effect */
-  @media (prefers-reduced-motion: no-preference) {
+  /* CRT Monitor effect - only in dark mode */
+  @media (prefers-reduced-motion: no-preference) and (prefers-color-scheme: dark) {
     body::before {
       content: " ";
       display: block;
@@ -93,21 +119,27 @@
 @layer components {
   /* LCARS Panel */
   .lcars-panel {
-    @apply relative bg-[#1a1f3a] border-l-8 border-[#ff9966] rounded-r-3xl;
+    position: relative;
+    background-color: var(--bg-panel);
+    @apply border-l-8 border-[#ff9966] rounded-r-3xl;
     box-shadow:
       0 0 20px rgba(255, 153, 102, 0.3),
       inset 0 0 20px rgba(255, 153, 102, 0.1);
   }
 
   .lcars-panel-purple {
-    @apply border-l-[#cc99cc];
+    position: relative;
+    background-color: var(--bg-panel);
+    @apply border-l-8 border-l-[#cc99cc] rounded-r-3xl;
     box-shadow:
       0 0 20px rgba(204, 153, 204, 0.3),
       inset 0 0 20px rgba(204, 153, 204, 0.1);
   }
 
   .lcars-panel-blue {
-    @apply border-l-[#9999ff];
+    position: relative;
+    background-color: var(--bg-panel);
+    @apply border-l-8 border-l-[#9999ff] rounded-r-3xl;
     box-shadow:
       0 0 20px rgba(153, 153, 255, 0.3),
       inset 0 0 20px rgba(153, 153, 255, 0.1);
@@ -115,14 +147,26 @@
 
   /* Terminal Window */
   .terminal {
-    @apply bg-black border-2 border-[#00ff00] rounded-lg shadow-2xl overflow-hidden;
+    background-color: var(--terminal-bg);
+    border: 2px solid var(--terminal-border);
+    @apply rounded-lg shadow-2xl overflow-hidden;
     box-shadow:
-      0 0 10px rgba(0, 255, 0, 0.5),
-      inset 0 0 10px rgba(0, 255, 0, 0.1);
+      0 0 10px rgba(0, 170, 0, 0.5),
+      inset 0 0 10px rgba(0, 170, 0, 0.1);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .terminal {
+      box-shadow:
+        0 0 10px rgba(0, 255, 0, 0.5),
+        inset 0 0 10px rgba(0, 255, 0, 0.1);
+    }
   }
 
   .terminal-header {
-    @apply bg-[#003300] border-b-2 border-[#00ff00] px-4 py-2 flex items-center gap-2;
+    background-color: var(--bg-tertiary);
+    border-bottom: 2px solid var(--terminal-border);
+    @apply px-4 py-2 flex items-center gap-2;
   }
 
   .terminal-dot {
@@ -130,13 +174,20 @@
   }
 
   .terminal-content {
-    @apply p-6 font-mono text-[#00ff00] leading-relaxed;
-    text-shadow: 0 0 5px rgba(0, 255, 0, 0.5);
+    color: var(--terminal-text);
+    @apply p-6 font-mono leading-relaxed;
+    text-shadow: 0 0 5px rgba(0, 170, 0, 0.3);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .terminal-content {
+      text-shadow: 0 0 5px rgba(0, 255, 0, 0.5);
+    }
   }
 
   .terminal-prompt::before {
     content: "$ ";
-    @apply text-[#00ff00];
+    color: var(--terminal-text);
   }
 
   .terminal-cursor {
@@ -171,21 +222,47 @@
 
   /* Cards */
   .card {
-    @apply bg-[#1a1f3a] border-2 border-[#3a4f7a] rounded-lg p-6
-           transition-all duration-300 hover:border-[#ff9966] hover:shadow-2xl;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    background-color: var(--bg-panel);
+    border: 2px solid var(--border-color);
+    @apply rounded-lg p-6 transition-all duration-300 hover:border-[#ff9966] hover:shadow-2xl;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .card {
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
+    }
   }
 
   .card:hover {
     box-shadow:
       0 0 30px rgba(255, 153, 102, 0.3),
-      0 10px 20px rgba(0, 0, 0, 0.5);
+      0 10px 20px rgba(0, 0, 0, 0.2);
     transform: translateY(-4px);
   }
 
+  @media (prefers-color-scheme: dark) {
+    .card:hover {
+      box-shadow:
+        0 0 30px rgba(255, 153, 102, 0.3),
+        0 10px 20px rgba(0, 0, 0, 0.5);
+    }
+  }
+
   /* Navigation */
+  nav {
+    background-color: rgba(10, 14, 39, 0.95);
+  }
+
+  @media (prefers-color-scheme: light) {
+    nav {
+      background-color: rgba(240, 244, 248, 0.95);
+    }
+  }
+
   .nav-link {
-    @apply text-[#a0b0d0] hover:text-[#ff9966] transition-colors duration-200
+    color: var(--text-secondary);
+    @apply hover:text-[#ff9966] transition-colors duration-200
            uppercase tracking-wider font-bold text-sm;
     text-shadow: 0 0 10px rgba(255, 153, 102, 0);
     transition: text-shadow 0.3s ease;
@@ -198,6 +275,15 @@
   .nav-link.active {
     @apply text-[#ff9966];
     text-shadow: 0 0 10px rgba(255, 153, 102, 0.8);
+  }
+
+  /* Terminal-style text colors */
+  .text-terminal {
+    color: var(--terminal-text);
+  }
+
+  .text-lcars-orange {
+    @apply text-[#ff9966];
   }
 
   /* Section Headings */
@@ -219,9 +305,17 @@
 
   /* Tech Badge */
   .tech-badge {
-    @apply px-3 py-1 bg-[#2a2f4a] border border-[#00ff00] text-[#00ff00]
-           rounded font-mono text-xs uppercase tracking-wider;
-    box-shadow: 0 0 10px rgba(0, 255, 0, 0.3);
+    background-color: var(--bg-tertiary);
+    border: 1px solid var(--terminal-border);
+    color: var(--terminal-text);
+    @apply px-3 py-1 rounded font-mono text-xs uppercase tracking-wider;
+    box-shadow: 0 0 10px rgba(0, 170, 0, 0.2);
+  }
+
+  @media (prefers-color-scheme: dark) {
+    .tech-badge {
+      box-shadow: 0 0 10px rgba(0, 255, 0, 0.3);
+    }
   }
 
   /* Glowing text */
@@ -324,7 +418,8 @@
 
 /* Prose (blog content) styling */
 .prose {
-  @apply text-[#e0e6ff] max-w-none;
+  color: var(--text-primary);
+  @apply max-w-none;
 }
 
 .prose h1, .prose h2, .prose h3, .prose h4 {
@@ -337,13 +432,30 @@
 }
 
 .prose code {
-  @apply px-2 py-1 bg-black text-[#00ff00] rounded font-mono text-sm border border-[#00ff00];
-  box-shadow: 0 0 5px rgba(0, 255, 0, 0.3);
+  background-color: var(--terminal-bg);
+  color: var(--terminal-text);
+  border: 1px solid var(--terminal-border);
+  @apply px-2 py-1 rounded font-mono text-sm;
+  box-shadow: 0 0 5px rgba(0, 170, 0, 0.2);
+}
+
+@media (prefers-color-scheme: dark) {
+  .prose code {
+    box-shadow: 0 0 5px rgba(0, 255, 0, 0.3);
+  }
 }
 
 .prose pre {
-  @apply bg-black border-2 border-[#00ff00] rounded p-4 overflow-x-auto;
-  box-shadow: 0 0 10px rgba(0, 255, 0, 0.3);
+  background-color: var(--terminal-bg);
+  border: 2px solid var(--terminal-border);
+  @apply rounded p-4 overflow-x-auto;
+  box-shadow: 0 0 10px rgba(0, 170, 0, 0.2);
+}
+
+@media (prefers-color-scheme: dark) {
+  .prose pre {
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.3);
+  }
 }
 
 .prose pre code {
@@ -368,6 +480,7 @@
 }
 
 .prose img {
-  @apply rounded-lg border-2 border-[#3a4f7a] my-6;
+  border: 2px solid var(--border-color);
+  @apply rounded-lg my-6;
   box-shadow: 0 0 20px rgba(255, 153, 102, 0.2);
 }
