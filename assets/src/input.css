@@ -19,19 +19,19 @@
     --terminal-cyan: #00ffff;
   }
 
-  /* Light mode colors */
+  /* Light mode colors - softer, less harsh */
   :root {
-    --bg-main: #f0f4f8;
-    --bg-secondary: #e8ecf0;
-    --bg-tertiary: #d8dce0;
-    --bg-panel: #ffffff;
-    --text-primary: #1a1f3a;
-    --text-secondary: #4a5568;
-    --border-color: #cbd5e0;
-    --terminal-bg: #2d3748;
-    --terminal-border: #00aa00;
-    --terminal-text: #00cc00;
-    --scanline-opacity: 0.03;
+    --bg-main: #d8dce8;
+    --bg-secondary: #c8ccd8;
+    --bg-tertiary: #b8bcc8;
+    --bg-panel: #e8ecf0;
+    --text-primary: #2a2f4a;
+    --text-secondary: #5a6080;
+    --border-color: #9a9eb0;
+    --terminal-bg: #3a3f5a;
+    --terminal-border: #008800;
+    --terminal-text: #009900;
+    --scanline-opacity: 0.05;
   }
 
   /* Dark mode colors */
@@ -256,7 +256,7 @@
 
   @media (prefers-color-scheme: light) {
     nav {
-      background-color: rgba(240, 244, 248, 0.95);
+      background-color: rgba(200, 204, 216, 0.95);
     }
   }
 
