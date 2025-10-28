@@ -2,53 +2,131 @@
 title: "Über mich"
 ---
 
-# Über mich
+# Hoi! Ich bin Samuel 👋
 
-Hallo! Ich bin **Samuel Rüegger**, ein leidenschaftlicher Web-Entwickler, AI-Experte und Tech-Kreativer aus der Schweiz.
+Web-Entwickler, AI-Nerd und Open-Source-Enthusiast aus **Basel, Schweiz** 🇨🇭
 
-## Meine Geschichte
+## Terminal: whoami
 
-Seit über einem Jahrzehnt bewege ich mich in der Welt der Webentwicklung. Was als Hobby begann, wurde schnell zur Berufung. Ich liebe es, komplexe Probleme mit eleganten, technischen Lösungen zu adressieren.
+```bash
+$ whoami
+Samuel Rüegger
 
-## Was ich tue
+$ location
+Basel, Schweiz - Am schönsten Ort am Rhein
 
-Ich spezialisiere mich auf:
+$ current_status
+Coding mit Star Trek im Hintergrund, LCARS-Interface aufm Bildschirm
+```
 
-- **Full-Stack Webentwicklung**: Von der Datenbank bis zur Benutzeroberfläche
-- **KI-Integration**: Implementierung moderner AI-Technologien in Webanwendungen
-- **Performance-Optimierung**: Schnelle, effiziente und skalierbare Systeme
-- **Open Source**: Aktive Beteiligung an der Open-Source-Community
+## Der Mensch hinter dem Terminal
 
-## Technologie-Stack
+Ich lebe in **Basel** – der Stadt, wo man im Sommer in den **Rhein springt** und sich flussabwärts treiben lässt. Ja, das mache ich regelmässig. Mit dem **Wickelfisch** (wasserdichte Tasche) die Kleider trocken halten und ab ins kühle Nass. Das ist Lebensqualität! 🏊‍♂️
 
-Meine bevorzugten Technologien:
+**Fun Fact**: Ich bin jemand, der sich ernsthaft freut, wenn ein neuer `git commit` durchgeht, der bei `diff` auch mal länger hinschaut als bei den meisten Filmen, und der bei "Star Trek: The Next Generation" mehr auf das LCARS-Interface achtet als auf die Handlung. Ja, ich bin ein **Nerd** – und stolz darauf! 🖖
 
-- **Backend**: PHP (Laravel, Symfony), Node.js
-- **Frontend**: JavaScript/TypeScript, Vue.js, React, Tailwind CSS
-- **Datenbanken**: MySQL, PostgreSQL, Redis
-- **DevOps**: Docker, Linux, CI/CD
-- **AI/ML**: Claude AI, OpenAI, Custom LLM Integration
+## Was ich (beruflich) tue
 
-## Philosophie
+Seit über einem Jahrzehnt bewege ich mich in der Welt der **Webentwicklung**. Was als Hobby begann, wurde zur Passion und dann zum Beruf. Ich liebe es, komplexe Probleme mit eleganten technischen Lösungen zu knacken.
 
-Ich glaube an:
+**Meine Spezialgebiete:**
 
-- **Clean Code**: Wartbar, lesbar, dokumentiert
-- **Open Source**: Wissen teilen und zur Community beitragen
-- **Kontinuierliches Lernen**: Technologie entwickelt sich rasant, ich auch
-- **Privacy First**: Datenschutz ist kein Feature, sondern eine Grundvoraussetzung
+- **Full-Stack Development**: Von der Datenbank bis zur UI – ich spreche beide Sprachen
+- **AI-Integration**: LLMs in Webanwendungen einbauen? Challenge accepted!
+- **Performance-Optimierung**: Langsame Websites sind wie langsame Terminals – inakzeptabel
+- **Open Source**: Code teilen, Community stärken, gemeinsam besser werden
 
-## Außerhalb des Codes
+## Tech-Stack (oder: Womit ich spiele)
 
-Wenn ich nicht code, beschäftige ich mich mit:
+```yaml
+backend:
+  - PHP: [Laravel, Symfony]
+  - Node.js: [Express, NestJS]
+  - Python: [für AI/ML Experimente]
 
-- **Linux & Open Source**: Ich teste gerne neue Distributionen und Tools
-- **Tech-Blogging**: Ich teile meine Erfahrungen und Erkenntnisse
-- **AI & Innovation**: Die Zukunft der Technologie fasziniert mich
-- **Community**: Aktiv in Tech-Communities und auf Mastodon
+frontend:
+  - JavaScript/TypeScript
+  - Vue.js, React
+  - Tailwind CSS (wie man sieht 😉)
 
-## Lass uns connecten!
+databases:
+  - MySQL, PostgreSQL
+  - Redis (für's Speed)
 
-Ich bin immer offen für spannende Projekte, Kooperationen oder einfach einen Tech-Talk.
+devops:
+  - Docker (alles in Containern!)
+  - Linux (mein Zuhause)
+  - CI/CD (Automatisierung ist Leben)
 
-**Kontakt**: Über meine [Kontaktseite](/contact.php) oder direkt auf [Mastodon](https://swiss.social/@srueegger).
+ai_ml:
+  - Claude AI
+  - OpenAI
+  - Custom LLM Integration
+  - Prompt Engineering
+
+desktop:
+  - Linux (natürlich!)
+  - GNOME mit Anpassungen
+  - Terminal > GUI
+```
+
+## Philosophie & Prinzipien
+
+**Code ist wie Jazz** – es braucht Struktur, aber auch Improvisation. Meine Grundsätze:
+
+- 🧹 **Clean Code**: Lesbar heute = wartbar morgen
+- 🔓 **Open Source First**: Wissen gehört geteilt, nicht gehortet
+- 📚 **Lifelong Learning**: Jeden Tag etwas Neues lernen (heute: noch mehr über LCARS-Design)
+- 🔐 **Privacy by Design**: Datenschutz ist keine Option, sondern Standard
+- 🚀 **Ship Fast, Iterate Faster**: Perfekt ist der Feind von fertig
+- ☕ **Coffee-Driven Development**: `while(awake) { code(); coffee(); }`
+
+## Wenn ich nicht am Coden bin
+
+**Rheinschwimmen** 🌊
+Sommertradition in Basel: Wickelfisch packen, reinhüpfen, gemütlich flussabwärts treiben. Meditation für Nerds.
+
+**Linux & Open Source** 🐧
+Ich teste ständig neue Distros (Arch-User BTW... Spass, ich nutze Fedora), konfiguriere GNOME bis zur Perfektion und lese Release Notes wie andere Leute Romane.
+
+**Tech-Blogging** ✍️
+Ich schreibe über meine Erfahrungen, Fails und Erfolge. Weil: geteiltes Wissen = doppeltes Wissen.
+
+**Star Trek & Sci-Fi** 🖖
+LCARS-Interfaces, Warp-Antrieb, Replikatoren – die Zukunft, die ich mir wünsche. Make it so!
+
+**Mastodon statt Twitter** 🐘
+Dezentral, Open Source, Community-getrieben. So sollte Social Media sein.
+
+**Basel erkunden** 🏙️
+Fasnacht, Herbstmesse, Rheinufer – Basel ist mehr als nur ein Standort, es ist ein Lebensgefühl.
+
+## Fun Facts über mich
+
+- Ich kann `vim` bedienen (und komme auch wieder raus!)
+- Mein idealer Urlaub: Ein Linux-Laptop, guter Kaffee, und ein Tech-Projekt
+- Ich lese Git-Commit-Messages anderer Leute zum Spass
+- Mein Browser hat durchschnittlich 47 Tabs offen (mindestens)
+- Ich diskutiere gerne über Tabs vs. Spaces (Team Spaces, sorry not sorry)
+- Star Trek TNG > alle anderen Star Trek Serien (fight me)
+
+## Let's Connect! 🤝
+
+Ich bin immer offen für:
+
+- **Spannende Projekte** – besonders wenn's technisch interessant wird
+- **Tech-Talks** – über AI, Web Development, Linux, oder warum LCARS das beste UI-Design ever ist
+- **Kollaborationen** – Open Source lebt von Zusammenarbeit
+- **Kaffee & Code** – in Basel oder remote
+
+**Kontakt**: Schreib mir über die [Kontaktseite](/contact.php) oder direkt auf [Mastodon](https://swiss.social/@srueegger).
+
+---
+
+```bash
+$ fortune
+"Das Leben ist zu kurz für schlechten Code und langsame Websites."
+- Samuel Rüegger
+
+$ exit
+```
