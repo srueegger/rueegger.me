@@ -107,7 +107,7 @@ rueegger.me/
    npm install
    ```
 
-4. **Build Tailwind CSS**
+4. **Build CSS & JavaScript**
    ```bash
    npm run build
    ```
@@ -119,10 +119,12 @@ rueegger.me/
    ddev start
    ```
 
-2. **Watch CSS changes**
+2. **Watch CSS & JS changes**
    ```bash
    npm run dev
    ```
+
+   This runs both CSS and JS watchers in parallel.
 
 3. **Access the site**
    Open https://rueeggerme.ddev.site in your browser
@@ -135,7 +137,7 @@ rueegger.me/
    php -S localhost:8000
    ```
 
-2. **In another terminal, watch CSS changes**
+2. **In another terminal, watch CSS & JS changes**
    ```bash
    npm run dev
    ```
