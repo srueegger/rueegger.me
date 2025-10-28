@@ -21,7 +21,7 @@ Coding mit Star Trek im Hintergrund, LCARS-Interface aufm Bildschirm
 
 ## Der Mensch hinter dem Terminal
 
-Ich lebe in **Basel** – der Stadt, wo man im Sommer in den **Rhein springt** und sich flussabwärts treiben lässt. Mit dem **Wickelfisch** (eine wasserdichte Tasche für die Kleider) ausgerüstet, springe ich regelmässig ins kühle Nass und lasse mich gemütlich flussabwärts treiben. Das ist Lebensqualität pur! 🏊‍♂️
+Ich lebe in **Basel** – der Stadt, wo man im Sommer in den **Rhein springt** und sich flussabwärts treiben lässt. Mit dem **Wickelfisch** ausgerüstet, springe ich regelmässig ins kühle Nass und lasse mich gemütlich flussabwärts treiben. Das ist Lebensqualität pur! 🏊‍♂️
 
 **Fun Fact**: Ich bin jemand, der sich ernsthaft freut, wenn ein neuer `git commit` durchgeht, der bei `diff` auch mal länger hinschaut als bei den meisten Filmen, und der bei "Star Trek: The Next Generation" mehr auf das LCARS-Interface achtet als auf die Handlung. Ja, ich bin ein **Nerd** – und stolz darauf! 🖖
 
@@ -103,7 +103,7 @@ desktop:
 Sommertradition in Basel: Wickelfisch packen, reinhüpfen, gemütlich flussabwärts treiben. Meditation für Nerds.
 
 **Linux & Open Source** 🐧
-Ich teste ständig neue Distros (Arch-User BTW... Spass, ich nutze Fedora), konfiguriere GNOME bis zur Perfektion und lese Release Notes wie andere Leute Romane.
+Ich teste ständig neue Distros (Arch-User BTW... Spass, ich nutze Ubuntu), konfiguriere GNOME bis zur Perfektion und lese Release Notes wie andere Leute Romane.
 
 **Tech-Blogging** ✍️
 Ich schreibe über meine Erfahrungen, Fails und Erfolge. Weil: geteiltes Wissen = doppeltes Wissen.

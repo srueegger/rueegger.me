@@ -21,7 +21,7 @@ Coding with Star Trek in the background, LCARS interface on screen
 
 ## The Human Behind the Terminal
 
-I live in **Basel** – the city where people jump into the **Rhine** in summer and float downstream. With my **Wickelfisch** (a waterproof bag for clothes), I regularly jump into the cool water and drift comfortably downstream. That's pure quality of life! 🏊‍♂️
+I live in **Basel** – the city where people jump into the **Rhine** in summer and float downstream. With my **Wickelfisch**, I regularly jump into the cool water and drift comfortably downstream. That's pure quality of life! 🏊‍♂️
 
 **Fun Fact**: I'm someone who genuinely gets excited when a new `git commit` goes through, who stares at `diff` output longer than most movies, and who pays more attention to the LCARS interface in "Star Trek: The Next Generation" than to the plot. Yes, I'm a **nerd** – and proud of it! 🖖
 
@@ -103,7 +103,7 @@ desktop:
 Summer tradition in Basel: pack the Wickelfisch, jump in, drift comfortably downstream. Meditation for nerds.
 
 **Linux & Open Source** 🐧
-I constantly test new distros (Arch user BTW... just kidding, I use Fedora), configure GNOME to perfection, and read release notes like other people read novels.
+I constantly test new distros (Arch user BTW... just kidding, I use Ubuntu), configure GNOME to perfection, and read release notes like other people read novels.
 
 **Tech Blogging** ✍️
 I write about my experiences, failures, and successes. Because: shared knowledge = doubled knowledge.
