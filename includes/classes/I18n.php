@@ -112,7 +112,17 @@ class I18n
     public function loadContent(string $type, string $slug = ''): ?string
     {
         if ($slug) {
+            // First try with slug as-is
             $filePath = "{$this->contentDir}/{$this->lang}/{$type}/{$slug}.md";
+
+            // If not found and it's a blog post, try to find by slug without date
+            if (!file_exists($filePath) && $type === 'blog') {
+                $blogDir = "{$this->contentDir}/{$this->lang}/blog";
+                $files = glob($blogDir . '/*-' . $slug . '.md');
+                if (!empty($files)) {
+                    $filePath = $files[0];
+                }
+            }
         } else {
             $filePath = "{$this->contentDir}/{$this->lang}/{$type}.md";
         }
@@ -141,10 +151,14 @@ class I18n
         foreach ($files as $file) {
             $content = file_get_contents($file);
             $meta = $this->extractMetadata($content);
-            $slug = basename($file, '.md');
+            $filename = basename($file, '.md');
+
+            // Remove date prefix from slug (YYYY-MM-DD-)
+            $slug = preg_replace('/^\d{4}-\d{2}-\d{2}-/', '', $filename);
 
             $posts[] = [
                 'slug' => $slug,
+                'filename' => $filename, // Keep original filename for loading
                 'title' => $meta['title'] ?? 'Untitled',
                 'date' => $meta['date'] ?? '',
                 'excerpt' => $meta['excerpt'] ?? '',

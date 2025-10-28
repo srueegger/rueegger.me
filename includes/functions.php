@@ -25,7 +25,10 @@ function url(string $path = '', ?string $lang = null): string
         return $base . '/?lang=' . $lang;
     }
 
-    return $base . '/' . ltrim($path, '/') . '?lang=' . $lang;
+    // Check if path already contains query parameters
+    $separator = strpos($path, '?') !== false ? '&' : '?';
+
+    return $base . '/' . ltrim($path, '/') . $separator . 'lang=' . $lang;
 }
 
 /**
