@@ -73,9 +73,18 @@ function truncate(string $text, int $length = 150): string
 }
 
 /**
- * Get asset URL
+ * Get asset URL with version timestamp for cache busting
  */
 function asset(string $path): string
 {
-    return '/' . ltrim($path, '/');
+    $url = '/' . ltrim($path, '/');
+    $filePath = $_SERVER['DOCUMENT_ROOT'] . $url;
+
+    // Add version parameter based on file modification time
+    if (file_exists($filePath)) {
+        $mtime = filemtime($filePath);
+        $url .= '?v=' . $mtime;
+    }
+
+    return $url;
 }
