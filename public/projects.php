@@ -8,10 +8,22 @@ $pageTitle = $i18n->getLang() === 'de' ? 'Projekte - Samuel Rüegger' : 'Project
 include '../includes/header.php';
 
 $projects = [
-    ['title' => 'AI-Integration-Suite', 'desc_de' => 'KI-Framework für Webanwendungen', 'desc_en' => 'AI framework for web apps', 'tech' => ['PHP', 'Laravel', 'Claude', 'GPT'], 'icon' => '🤖'],
-    ['title' => 'Modern-CMS-Platform', 'desc_de' => 'Headless CMS mit GraphQL', 'desc_en' => 'Headless CMS with GraphQL', 'tech' => ['PHP', 'Symfony', 'GraphQL', 'Vue'], 'icon' => '📝'],
-    ['title' => 'E-Commerce-Optimization', 'desc_de' => '70% schneller durch Performance-Tuning', 'desc_en' => '70% faster through performance tuning', 'tech' => ['JavaScript', 'PWA', 'Redis'], 'icon' => '🛒'],
-    ['title' => 'DevOps-Automation', 'desc_de' => 'CI/CD Pipeline für Kubernetes', 'desc_en' => 'CI/CD pipeline for Kubernetes', 'tech' => ['Docker', 'K8s', 'GitLab'], 'icon' => '🚀'],
+    [
+        'title' => 'GuideOS',
+        'desc_de' => 'Innovatives Open-Source-Projekt, das die Art und Weise revolutioniert, wie wir mit Betriebssystemen und Entwicklungsumgebungen arbeiten',
+        'desc_en' => 'Innovative open-source project revolutionizing how we work with operating systems and development environments',
+        'tech' => ['Open Source', 'Linux', 'Development Tools'],
+        'icon' => 'fa-solid fa-rocket',
+        'url' => 'https://guideos.de'
+    ],
+    [
+        'title' => 'helfen-helfen',
+        'desc_de' => 'Gemeinnütziger Verein zur Unterstützung von Menschen in Not',
+        'desc_en' => 'Non-profit organization supporting people in need',
+        'tech' => ['Social Impact', 'Community'],
+        'icon' => 'fa-solid fa-hands-holding-circle',
+        'url' => 'https://helfen-helfen.ch'
+    ],
 ];
 ?>
 
@@ -37,17 +49,26 @@ $projects = [
             <?php $delay = 0; foreach ($projects as $p): 
             $desc = $i18n->getLang() === 'de' ? $p['desc_de'] : $p['desc_en'];
             ?>
-            <div class="lcars-panel p-6 animate-on-scroll animation-delay-<?= $delay ?>">
+            <div class="lcars-panel p-6 animate-on-scroll animation-delay-<?= $delay ?> hover:border-[#ff9966] transition-all group">
                 <div class="flex items-start gap-4">
-                    <div class="text-4xl"><?= $p['icon'] ?></div>
+                    <div class="w-16 h-16 flex items-center justify-center rounded-full bg-[#0a0e27] border-2 border-[#ff9966] flex-shrink-0 group-hover:scale-110 transition-all" style="aspect-ratio: 1/1;">
+                        <i class="<?= $p['icon'] ?> text-[#ff9966] text-2xl"></i>
+                    </div>
                     <div class="flex-1">
-                        <h3 class="text-xl font-bold text-[#ff9966] mb-2 uppercase font-mono"><?= $p['title'] ?></h3>
+                        <h3 class="text-xl font-bold text-[#ff9966] mb-2 uppercase font-mono group-hover:text-[#ffb000] transition-colors"><?= $p['title'] ?></h3>
                         <p class="text-[#a0b0d0] mb-4 text-sm"><?= $desc ?></p>
-                        <div class="flex flex-wrap gap-2">
+                        <div class="flex flex-wrap gap-2 mb-4">
                             <?php foreach ($p['tech'] as $tech): ?>
                             <span class="tech-badge"><?= $tech ?></span>
                             <?php endforeach; ?>
                         </div>
+                        <?php if (isset($p['url'])): ?>
+                        <a href="<?= $p['url'] ?>" target="_blank" rel="noopener noreferrer"
+                           class="inline-flex items-center gap-2 px-4 py-2 bg-[#1a1f3a] border border-[#00ff00] text-[#00ff00] rounded hover:bg-[#00ff00] hover:text-black transition-all font-mono text-xs">
+                            <i class="fa-solid fa-arrow-up-right-from-square"></i>
+                            <?= $i18n->getLang() === 'de' ? 'Projekt besuchen' : 'Visit project' ?>
+                        </a>
+                        <?php endif; ?>
                     </div>
                 </div>
             </div>
