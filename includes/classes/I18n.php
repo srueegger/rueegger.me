@@ -177,6 +177,11 @@ class I18n
                     $key = trim($key);
                     $value = trim($value);
 
+                    // Remove surrounding quotes from string values
+                    if (preg_match('/^["\'](.+)["\']$/', $value, $matches)) {
+                        $value = $matches[1];
+                    }
+
                     // Handle arrays (tags)
                     if ($key === 'tags' && strpos($value, '[') === 0) {
                         $value = json_decode(str_replace("'", '"', $value), true) ?? [];
