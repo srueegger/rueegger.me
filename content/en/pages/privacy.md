@@ -15,7 +15,7 @@ Email: samuel@rueegger.me
 
 ## Hosting
 
-This website is hosted on a web server. The hosting provider's operating company may store server log files that may contain the following information:
+This website is hosted by **Cyon GmbH**. The hosting provider's operating company may store server log files that may contain the following information:
 
 - IP address
 - Browser type and version
@@ -49,8 +49,6 @@ Linked external websites:
 - GitHub (github.com)
 - Mastodon (swiss.social)
 - LinkedIn (linkedin.com)
-- Twitter/X (twitter.com)
-- YouTube (youtube.com)
 - Instagram (instagram.com)
 
 ## Your Rights
@@ -74,4 +72,4 @@ Email: samuel@rueegger.me
 
 This privacy policy may occasionally be updated to reflect changes to the website or legal requirements.
 
-**Last updated**: October 27, 2024
+**Last updated**: October 28, 2025

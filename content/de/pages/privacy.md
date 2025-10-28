@@ -15,7 +15,7 @@ E-Mail: samuel@rueegger.me
 
 ## Hosting
 
-Diese Website wird auf einem Webserver gehostet. Die Betreibergesellschaft des Hosting-Anbieters kann Server-Log-Dateien speichern, die folgende Informationen enthalten können:
+Diese Website wird bei **Cyon GmbH** gehostet. Die Betreibergesellschaft des Hosting-Anbieters kann Server-Log-Dateien speichern, die folgende Informationen enthalten können:
 
 - IP-Adresse
 - Browsertyp und -version
@@ -49,8 +49,6 @@ Verlinkte externe Websites:
 - GitHub (github.com)
 - Mastodon (swiss.social)
 - LinkedIn (linkedin.com)
-- Twitter/X (twitter.com)
-- YouTube (youtube.com)
 - Instagram (instagram.com)
 
 ## Ihre Rechte
@@ -74,4 +72,4 @@ E-Mail: samuel@rueegger.me
 
 Diese Datenschutzerklärung kann gelegentlich angepasst werden, um Änderungen auf der Website oder rechtliche Anforderungen zu reflektieren.
 
-**Letzte Aktualisierung**: 27. Oktober 2024
+**Letzte Aktualisierung**: 28. Oktober 2025
