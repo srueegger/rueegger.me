@@ -14,6 +14,7 @@ class MarkdownParser
     {
         $this->parsedown = new \Parsedown();
         $this->parsedown->setSafeMode(true);
+        $this->parsedown->setBreaksEnabled(true); // Enable line breaks
     }
 
     /**
