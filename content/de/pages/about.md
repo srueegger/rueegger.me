@@ -2,7 +2,7 @@
 title: "Über mich"
 ---
 
-# Hoi! Ich bin Samuel 👋
+# Hallo! Ich bin Samuel 👋
 
 Web-Entwickler, AI-Nerd und Open-Source-Enthusiast aus **Basel, Schweiz** 🇨🇭
 
@@ -21,7 +21,7 @@ Coding mit Star Trek im Hintergrund, LCARS-Interface aufm Bildschirm
 
 ## Der Mensch hinter dem Terminal
 
-Ich lebe in **Basel** – der Stadt, wo man im Sommer in den **Rhein springt** und sich flussabwärts treiben lässt. Ja, das mache ich regelmässig. Mit dem **Wickelfisch** (wasserdichte Tasche) die Kleider trocken halten und ab ins kühle Nass. Das ist Lebensqualität! 🏊‍♂️
+Ich lebe in **Basel** – der Stadt, wo man im Sommer in den **Rhein springt** und sich flussabwärts treiben lässt. Mit dem **Wickelfisch** (eine wasserdichte Tasche für die Kleider) ausgerüstet, springe ich regelmässig ins kühle Nass und lasse mich gemütlich flussabwärts treiben. Das ist Lebensqualität pur! 🏊‍♂️
 
 **Fun Fact**: Ich bin jemand, der sich ernsthaft freut, wenn ein neuer `git commit` durchgeht, der bei `diff` auch mal länger hinschaut als bei den meisten Filmen, und der bei "Star Trek: The Next Generation" mehr auf das LCARS-Interface achtet als auf die Handlung. Ja, ich bin ein **Nerd** – und stolz darauf! 🖖
 
@@ -36,11 +36,13 @@ Seit über einem Jahrzehnt bewege ich mich in der Welt der **Webentwicklung**. W
 - **Performance-Optimierung**: Langsame Websites sind wie langsame Terminals – inakzeptabel
 - **Open Source**: Code teilen, Community stärken, gemeinsam besser werden
 
+**Aktuelles Projekt:** Ich bin aktiv bei **[GuideOS](https://guideos.de)** involviert – einem innovativen Open-Source-Projekt, das die Art und Weise revolutioniert, wie wir mit Betriebssystemen und Entwicklungsumgebungen arbeiten. Hier bringe ich meine Expertise in Webentwicklung und AI-Integration ein, um eine moderne, nutzerfreundliche Plattform zu schaffen.
+
 ## Tech-Stack (oder: Womit ich spiele)
 
 ```yaml
 backend:
-  - PHP: [Laravel, Symfony]
+  - PHP: [Laravel, Symfony, WordPress]
   - Node.js: [Express, NestJS]
   - Python: [für AI/ML Experimente]
 
@@ -48,15 +50,29 @@ frontend:
   - JavaScript/TypeScript
   - Vue.js, React
   - Tailwind CSS (wie man sieht 😉)
+  - SASS/SCSS
+  - Bootstrap
+
+build_tools:
+  - Webpack, Vite
+  - Gulp, Grunt
+  - npm, Composer
+  - Babel, PostCSS
+
+cms_platforms:
+  - WordPress (Themes & Plugins)
+  - Headless CMS (Strapi, Contentful)
 
 databases:
   - MySQL, PostgreSQL
   - Redis (für's Speed)
+  - MongoDB
 
 devops:
   - Docker (alles in Containern!)
   - Linux (mein Zuhause)
   - CI/CD (Automatisierung ist Leben)
+  - Git, GitHub Actions
 
 ai_ml:
   - Claude AI
