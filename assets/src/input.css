@@ -3,9 +3,9 @@
 @tailwind utilities;
 
 @layer base {
-  /* LCARS/Nerdy Color Scheme with Light/Dark Support */
+  /* LCARS/Nerdy Color Scheme - Dark Mode Only */
   :root {
-    /* LCARS-inspired colors (same in both modes) */
+    /* LCARS-inspired colors */
     --lcars-orange: #ff9966;
     --lcars-purple: #cc99cc;
     --lcars-blue: #9999ff;
@@ -13,42 +13,23 @@
     --lcars-yellow: #ffcc99;
     --lcars-red: #ff6666;
 
-    /* Terminal colors (same in both modes) */
+    /* Terminal colors */
     --terminal-green: #00ff00;
     --terminal-amber: #ffb000;
     --terminal-cyan: #00ffff;
-  }
 
-  /* Light mode colors - softer, less harsh */
-  :root {
-    --bg-main: #d8dce8;
-    --bg-secondary: #c8ccd8;
-    --bg-tertiary: #b8bcc8;
-    --bg-panel: #e8ecf0;
-    --text-primary: #2a2f4a;
-    --text-secondary: #5a6080;
-    --border-color: #9a9eb0;
-    --terminal-bg: #3a3f5a;
-    --terminal-border: #008800;
-    --terminal-text: #009900;
-    --scanline-opacity: 0.05;
-  }
-
-  /* Dark mode colors */
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --bg-main: #0a0e27;
-      --bg-secondary: #1a1f3a;
-      --bg-tertiary: #2a2f4a;
-      --bg-panel: #1a1f3a;
-      --text-primary: #e0e6ff;
-      --text-secondary: #a0b0d0;
-      --border-color: #3a4f7a;
-      --terminal-bg: #000000;
-      --terminal-border: #00ff00;
-      --terminal-text: #00ff00;
-      --scanline-opacity: 0.15;
-    }
+    /* Base colors - always dark */
+    --bg-main: #0a0e27;
+    --bg-secondary: #1a1f3a;
+    --bg-tertiary: #2a2f4a;
+    --bg-panel: #1a1f3a;
+    --text-primary: #e0e6ff;
+    --text-secondary: #a0b0d0;
+    --border-color: #3a4f7a;
+    --terminal-bg: #000000;
+    --terminal-border: #00ff00;
+    --terminal-text: #00ff00;
+    --scanline-opacity: 0.15;
   }
 
   body {
@@ -66,8 +47,8 @@
     background-size: 100% 2px;
   }
 
-  /* CRT Monitor effect - only in dark mode */
-  @media (prefers-reduced-motion: no-preference) and (prefers-color-scheme: dark) {
+  /* CRT Monitor effect */
+  @media (prefers-reduced-motion: no-preference) {
     body::before {
       content: " ";
       display: block;
@@ -151,16 +132,8 @@
     border: 2px solid var(--terminal-border);
     @apply rounded-lg shadow-2xl overflow-hidden;
     box-shadow:
-      0 0 10px rgba(0, 170, 0, 0.5),
-      inset 0 0 10px rgba(0, 170, 0, 0.1);
-  }
-
-  @media (prefers-color-scheme: dark) {
-    .terminal {
-      box-shadow:
-        0 0 10px rgba(0, 255, 0, 0.5),
-        inset 0 0 10px rgba(0, 255, 0, 0.1);
-    }
+      0 0 10px rgba(0, 255, 0, 0.5),
+      inset 0 0 10px rgba(0, 255, 0, 0.1);
   }
 
   .terminal-header {
@@ -176,13 +149,7 @@
   .terminal-content {
     color: var(--terminal-text);
     @apply p-6 font-mono leading-relaxed;
-    text-shadow: 0 0 5px rgba(0, 170, 0, 0.3);
-  }
-
-  @media (prefers-color-scheme: dark) {
-    .terminal-content {
-      text-shadow: 0 0 5px rgba(0, 255, 0, 0.5);
-    }
+    text-shadow: 0 0 5px rgba(0, 255, 0, 0.5);
   }
 
   .terminal-prompt::before {
@@ -225,39 +192,19 @@
     background-color: var(--bg-panel);
     border: 2px solid var(--border-color);
     @apply rounded-lg p-6 transition-all duration-300 hover:border-[#ff9966] hover:shadow-2xl;
-    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
-  }
-
-  @media (prefers-color-scheme: dark) {
-    .card {
-      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
-    }
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.3);
   }
 
   .card:hover {
     box-shadow:
       0 0 30px rgba(255, 153, 102, 0.3),
-      0 10px 20px rgba(0, 0, 0, 0.2);
+      0 10px 20px rgba(0, 0, 0, 0.5);
     transform: translateY(-4px);
-  }
-
-  @media (prefers-color-scheme: dark) {
-    .card:hover {
-      box-shadow:
-        0 0 30px rgba(255, 153, 102, 0.3),
-        0 10px 20px rgba(0, 0, 0, 0.5);
-    }
   }
 
   /* Navigation */
   nav {
     background-color: rgba(10, 14, 39, 0.95);
-  }
-
-  @media (prefers-color-scheme: light) {
-    nav {
-      background-color: rgba(200, 204, 216, 0.95);
-    }
   }
 
   .nav-link {
@@ -309,13 +256,7 @@
     border: 1px solid var(--terminal-border);
     color: var(--terminal-text);
     @apply px-3 py-1 rounded font-mono text-xs uppercase tracking-wider;
-    box-shadow: 0 0 10px rgba(0, 170, 0, 0.2);
-  }
-
-  @media (prefers-color-scheme: dark) {
-    .tech-badge {
-      box-shadow: 0 0 10px rgba(0, 255, 0, 0.3);
-    }
+    box-shadow: 0 0 10px rgba(0, 255, 0, 0.3);
   }
 
   /* Glowing text */
@@ -436,26 +377,14 @@
   color: var(--terminal-text);
   border: 1px solid var(--terminal-border);
   @apply px-2 py-1 rounded font-mono text-sm;
-  box-shadow: 0 0 5px rgba(0, 170, 0, 0.2);
-}
-
-@media (prefers-color-scheme: dark) {
-  .prose code {
-    box-shadow: 0 0 5px rgba(0, 255, 0, 0.3);
-  }
+  box-shadow: 0 0 5px rgba(0, 255, 0, 0.3);
 }
 
 .prose pre {
   background-color: var(--terminal-bg);
   border: 2px solid var(--terminal-border);
   @apply rounded p-4 overflow-x-auto;
-  box-shadow: 0 0 10px rgba(0, 170, 0, 0.2);
-}
-
-@media (prefers-color-scheme: dark) {
-  .prose pre {
-    box-shadow: 0 0 10px rgba(0, 255, 0, 0.3);
-  }
+  box-shadow: 0 0 10px rgba(0, 255, 0, 0.3);
 }
 
 .prose pre code {
