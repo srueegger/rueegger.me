@@ -3,7 +3,7 @@ title: "Die XZ-Hintertür gefährdet unzählige Computer weltweit – was wir bi
 date: "2024-03-30"
 excerpt: "Ein kritischer Backdoor in der XZ-Kompressionsbibliothek bedroht Server weltweit. Die Geschichte eines mehrjährigen Social-Engineering-Angriffs."
 tags: ["Linux", "Sicherheit", "xz", "Backdoor"]
-image: "/media/blog/xz-backdoor.webp"
+image: "/images/xz-backdoor.webp"
 ---
 
 # Die XZ-Hintertür: Globale Sicherheitsbedrohung

@@ -3,7 +3,7 @@ title: "Die Illusion der Vielfalt: Warum Linux-Distributionen heute mehr eint al
 date: "2024-08-21"
 excerpt: "Trotz hunderten Linux-Distributionen – bieten sie wirklich echte Vielfalt oder nur eine Illusion der Wahlfreiheit?"
 tags: ["Linux", "Distributionen", "Vielfalt", "Open Source"]
-image: "/media/blog/linux-vielfalt.png"
+image: "/images/linux-vielfalt.png"
 ---
 
 # Die Illusion der Vielfalt: Warum Linux-Distributionen heute mehr eint als trennt

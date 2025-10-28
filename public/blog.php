@@ -1,99 +1,73 @@
 <?php
 require_once '../vendor/autoload.php';
 require_once '../includes/functions.php';
-
 use App\I18n;
 
 $i18n = new I18n('../content');
-
 $pageTitle = 'Blog - Samuel Rüegger';
-$metaDescription = $i18n->getLang() === 'de'
-    ? 'Tech-Blog von Samuel Rüegger - Artikel über Webentwicklung, AI, Linux und moderne Technologien.'
-    : 'Tech blog by Samuel Rüegger - Articles about web development, AI, Linux, and modern technologies.';
-
+$metaDescription = $i18n->getLang() === 'de' ? 'Tech-Blog über Webentwicklung, AI, Linux' : 'Tech blog about web development, AI, Linux';
 include '../includes/header.php';
-
 $posts = $i18n->getBlogPosts();
 ?>
 
-<div class="pt-24 pb-20 bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-gray-900 dark:via-gray-900 dark:to-gray-800">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <!-- Header -->
-        <div class="text-center mb-16 animate-on-scroll">
-            <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-6">
-                <span class="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
-                    Blog
-                </span>
-            </h1>
-            <p class="text-xl text-gray-600 dark:text-gray-300 max-w-3xl mx-auto">
-                <?= $i18n->getLang() === 'de'
-                    ? 'Gedanken und Erkenntnisse zu Webentwicklung, AI, Linux und Tech'
-                    : 'Thoughts and insights on web development, AI, Linux, and tech'
-                ?>
-            </p>
+<div class="pt-24 pb-20 px-4">
+    <div class="max-w-7xl mx-auto">
+        <div class="terminal mb-12 animate-on-scroll">
+            <div class="terminal-header">
+                <div class="terminal-dot bg-red-500"></div>
+                <div class="terminal-dot bg-yellow-500"></div>
+                <div class="terminal-dot bg-green-500"></div>
+                <span class="ml-2 text-sm">samuel@rueegger.me:~/blog$</span>
+            </div>
+            <div class="terminal-content text-sm">
+                <p class="terminal-prompt">tail -f posts.log</p>
+                <p class="text-[#00ff00] mb-2">&gt; <?= $i18n->getLang() === 'de' ? 'Zeige neueste Blogposts...' : 'Showing recent blog posts...' ?></p>
+                <p class="text-[#a0b0d0]">&gt; Total: <?= count($posts) ?> posts</p>
+            </div>
         </div>
 
-        <!-- Blog Posts Grid -->
         <?php if (empty($posts)): ?>
-        <div class="text-center py-12">
-            <p class="text-xl text-gray-600 dark:text-gray-400">
-                <?= $i18n->getLang() === 'de' ? 'Noch keine Artikel verfügbar.' : 'No articles available yet.' ?>
-            </p>
+        <div class="lcars-panel p-12 text-center">
+            <p class="text-[#00ff00] text-xl">$ ls -la ~/blog/</p>
+            <p class="text-[#a0b0d0] mt-4">&gt; <?= $i18n->getLang() === 'de' ? 'Noch keine Artikel verfügbar.' : 'No articles available yet.' ?></p>
         </div>
         <?php else: ?>
-        <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-            <?php
-            $delay = 0;
-            foreach ($posts as $post):
-            ?>
-            <article class="card animate-on-scroll animation-delay-<?= $delay ?>">
-                <?php if ($post['image']): ?>
-                <img src="<?= e($post['image']) ?>" alt="<?= e($post['title']) ?>" class="w-full h-48 object-cover rounded-lg mb-4" loading="lazy">
-                <?php endif; ?>
-
-                <div class="flex flex-wrap gap-2 mb-3">
-                    <?php foreach ($post['tags'] as $tag): ?>
-                    <span class="px-2 py-1 bg-gray-100 dark:bg-gray-700 text-gray-700 dark:text-gray-300 rounded text-xs">
-                        <?= e($tag) ?>
-                    </span>
-                    <?php endforeach; ?>
-                </div>
-
-                <h2 class="text-xl font-bold mb-3">
-                    <a href="<?= url('post.php?slug=' . $post['slug']) ?>" class="hover:text-blue-600 dark:hover:text-blue-400 transition-colors">
-                        <?= e($post['title']) ?>
-                    </a>
-                </h2>
-
-                <p class="text-gray-600 dark:text-gray-400 mb-4 line-clamp-3">
-                    <?= e($post['excerpt']) ?>
-                </p>
-
-                <div class="flex justify-between items-center text-sm">
-                    <span class="text-gray-500 dark:text-gray-500">
-                        <?= formatDate($post['date'], $i18n->getLang()) ?>
-                    </span>
-                    <a href="<?= url('post.php?slug=' . $post['slug']) ?>" class="text-blue-600 dark:text-blue-400 hover:underline font-medium">
-                        <?= $i18n->getLang() === 'de' ? 'Weiterlesen →' : 'Read more →' ?>
-                    </a>
+        <div class="space-y-6">
+            <?php foreach ($posts as $i => $post): ?>
+            <article class="lcars-panel p-6 hover:border-[#00ff00] transition-all animate-on-scroll">
+                <div class="flex flex-col md:flex-row gap-6">
+                    <?php if ($post['image']): ?>
+                    <div class="md:w-48 flex-shrink-0">
+                        <img src="<?= e($post['image']) ?>" alt="<?= e($post['title']) ?>" 
+                             class="w-full h-32 object-cover rounded border-2 border-[#3a4f7a]">
+                    </div>
+                    <?php endif; ?>
+                    <div class="flex-1">
+                        <div class="flex items-start justify-between mb-2">
+                            <span class="text-xs font-mono text-[#00ff00]">[<?= date('Y-m-d H:i', strtotime($post['date'])) ?>]</span>
+                            <div class="flex flex-wrap gap-2">
+                                <?php foreach (array_slice($post['tags'], 0, 3) as $tag): ?>
+                                <span class="tech-badge text-xs"><?= e($tag) ?></span>
+                                <?php endforeach; ?>
+                            </div>
+                        </div>
+                        <h2 class="text-xl font-bold text-[#ff9966] mb-2 uppercase">
+                            <a href="<?= url('post.php?slug=' . $post['slug']) ?>" class="hover:text-[#ffb000]">
+                                <?= e($post['title']) ?>
+                            </a>
+                        </h2>
+                        <p class="text-[#a0b0d0] text-sm mb-3"><?= e($post['excerpt']) ?></p>
+                        <a href="<?= url('post.php?slug=' . $post['slug']) ?>" 
+                           class="inline-block text-[#00ff00] hover:text-[#ff9966] font-mono text-sm">
+                            $ cat <?= $post['slug'] ?>.md →
+                        </a>
+                    </div>
                 </div>
             </article>
-            <?php
-            $delay = ($delay + 100) % 500;
-            endforeach;
-            ?>
+            <?php endforeach; ?>
         </div>
         <?php endif; ?>
     </div>
 </div>
-
-<style>
-.line-clamp-3 {
-    display: -webkit-box;
-    -webkit-line-clamp: 3;
-    -webkit-box-orient: vertical;
-    overflow: hidden;
-}
-</style>
 
 <?php include '../includes/footer.php'; ?>
