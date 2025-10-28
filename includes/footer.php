@@ -55,32 +55,28 @@
                     <h3 class="text-lg font-bold mb-4 text-[#9999ff] uppercase tracking-wider">$ netstat -ports</h3>
                     <div class="grid grid-cols-2 md:grid-cols-4 gap-3">
                         <a href="https://github.com/srueegger" target="_blank" rel="noopener noreferrer"
-                           class="flex flex-col items-center justify-center p-3 bg-[#0a0e27] border border-[#3a4f7a] rounded hover:border-[#00ff00] transition-all group"
+                           class="flex flex-col items-center justify-center p-4 bg-[#0a0e27] border border-[#3a4f7a] rounded hover:border-[#00ff00] transition-all group"
                            style="box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);"
                            aria-label="GitHub">
-                            <i class="fa-brands fa-github text-2xl text-[#a0b0d0] group-hover:text-[#00ff00] transition-colors"></i>
-                            <span class="text-xs text-[#a0b0d0] mt-1 font-mono">GH</span>
+                            <i class="fa-brands fa-github text-3xl text-[#a0b0d0] group-hover:text-[#00ff00] transition-colors"></i>
                         </a>
                         <a href="https://swiss.social/@srueegger" target="_blank" rel="noopener noreferrer me"
-                           class="flex flex-col items-center justify-center p-3 bg-[#0a0e27] border border-[#3a4f7a] rounded hover:border-[#00ff00] transition-all group"
+                           class="flex flex-col items-center justify-center p-4 bg-[#0a0e27] border border-[#3a4f7a] rounded hover:border-[#00ff00] transition-all group"
                            style="box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);"
                            aria-label="Mastodon">
-                            <i class="fa-brands fa-mastodon text-2xl text-[#a0b0d0] group-hover:text-[#00ff00] transition-colors"></i>
-                            <span class="text-xs text-[#a0b0d0] mt-1 font-mono">MD</span>
+                            <i class="fa-brands fa-mastodon text-3xl text-[#a0b0d0] group-hover:text-[#00ff00] transition-colors"></i>
                         </a>
                         <a href="https://www.linkedin.com/in/srueegger/" target="_blank" rel="noopener noreferrer"
-                           class="flex flex-col items-center justify-center p-3 bg-[#0a0e27] border border-[#3a4f7a] rounded hover:border-[#00ff00] transition-all group"
+                           class="flex flex-col items-center justify-center p-4 bg-[#0a0e27] border border-[#3a4f7a] rounded hover:border-[#00ff00] transition-all group"
                            style="box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);"
                            aria-label="LinkedIn">
-                            <i class="fa-brands fa-linkedin text-2xl text-[#a0b0d0] group-hover:text-[#00ff00] transition-colors"></i>
-                            <span class="text-xs text-[#a0b0d0] mt-1 font-mono">LI</span>
+                            <i class="fa-brands fa-linkedin text-3xl text-[#a0b0d0] group-hover:text-[#00ff00] transition-colors"></i>
                         </a>
                         <a href="https://www.instagram.com/samrueegger/" target="_blank" rel="noopener noreferrer"
-                           class="flex flex-col items-center justify-center p-3 bg-[#0a0e27] border border-[#3a4f7a] rounded hover:border-[#00ff00] transition-all group"
+                           class="flex flex-col items-center justify-center p-4 bg-[#0a0e27] border border-[#3a4f7a] rounded hover:border-[#00ff00] transition-all group"
                            style="box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);"
                            aria-label="Instagram">
-                            <i class="fa-brands fa-instagram text-2xl text-[#a0b0d0] group-hover:text-[#00ff00] transition-colors"></i>
-                            <span class="text-xs text-[#a0b0d0] mt-1 font-mono">IG</span>
+                            <i class="fa-brands fa-instagram text-3xl text-[#a0b0d0] group-hover:text-[#00ff00] transition-colors"></i>
                         </a>
                     </div>
                 </div>
