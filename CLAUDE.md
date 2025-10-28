@@ -30,6 +30,15 @@
 - **Performance**: PurgeCSS removes unused styles in production
 - **Customization**: Easy to extend and modify
 
+#### Why Font Awesome Pro?
+
+- **Professional Icons**: Access to 30,000+ premium icons
+- **Consistent Design**: All icons follow the same design language
+- **Performance**: Icon fonts load fast and scale perfectly
+- **Brand Icons**: Official brand icons for social media platforms
+- **Customization**: Easy to style with CSS (color, size, animations)
+- **Kit Implementation**: Using Font Awesome Kit (ID: 3770a9ceab) for automatic updates
+
 #### Why Markdown for Content?
 
 - **Simplicity**: Easy to write and edit
