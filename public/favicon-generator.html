@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Favicon Generator</title>
+    <style>
+        body {
+            margin: 0;
+            padding: 20px;
+            background: #f0f0f0;
+        }
+        #canvas {
+            display: block;
+            margin: 20px auto;
+            border: 2px solid #333;
+        }
+        .controls {
+            text-align: center;
+            margin: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            cursor: pointer;
+            background: #ff9966;
+            color: white;
+            border: none;
+            border-radius: 5px;
+            margin: 5px;
+        }
+    </style>
+</head>
+<body>
+    <div class="controls">
+        <h1>LCARS Favicon Generator</h1>
+        <canvas id="canvas" width="512" height="512"></canvas>
+        <br>
+        <button onclick="download(32)">Download 32x32</button>
+        <button onclick="download(180)">Download 180x180 (Apple)</button>
+        <button onclick="download(512)">Download 512x512</button>
+    </div>
+
+    <script>
+        const canvas = document.getElementById('canvas');
+        const ctx = canvas.getContext('2d');
+
+        function drawFavicon() {
+            // Background
+            ctx.fillStyle = '#0a0e27';
+            ctx.fillRect(0, 0, 512, 512);
+
+            // Top LCARS bar
+            ctx.fillStyle = '#ff9966';
+            ctx.beginPath();
+            ctx.roundRect(30, 30, 452, 60, 30);
+            ctx.fill();
+
+            // Bottom LCARS bar
+            ctx.fillStyle = '#00ff00';
+            ctx.beginPath();
+            ctx.roundRect(30, 422, 452, 60, 30);
+            ctx.fill();
+
+            // Terminal prompt style "S"
+            ctx.fillStyle = '#ff9966';
+            ctx.font = 'bold 320px monospace';
+            ctx.textAlign = 'center';
+            ctx.textBaseline = 'middle';
+            ctx.fillText('S', 256, 256);
+
+            // Terminal cursor
+            ctx.fillStyle = '#00ff00';
+            ctx.fillRect(360, 200, 30, 150);
+        }
+
+        function download(size) {
+            const tempCanvas = document.createElement('canvas');
+            tempCanvas.width = size;
+            tempCanvas.height = size;
+            const tempCtx = tempCanvas.getContext('2d');
+
+            // Draw on temp canvas at smaller size
+            tempCtx.drawImage(canvas, 0, 0, size, size);
+
+            // Download
+            const link = document.createElement('a');
+            link.download = `favicon-${size}x${size}.png`;
+            link.href = tempCanvas.toDataURL('image/png');
+            link.click();
+        }
+
+        // Draw on load
+        drawFavicon();
+    </script>
+</body>
+</html>
