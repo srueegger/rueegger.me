@@ -180,7 +180,9 @@ Static pages (About, etc.) are in `content/{lang}/pages/`. Edit the Markdown fil
 npm run build
 ```
 
-This generates minified CSS in `public/css/style.css`.
+This generates:
+- Minified CSS in `public/css/style.css`
+- Minified JavaScript in `public/js/main.js`
 
 ### Deploy to Server
 
@@ -221,8 +223,12 @@ If using Apache, create a `.htaccess` file in `public/`:
 
 ## NPM Scripts
 
-- `npm run dev`: Watch mode for development (rebuilds CSS on changes)
-- `npm run build`: Production build (minified CSS)
+- `npm run dev`: Watch mode for development (rebuilds CSS & JS on changes)
+- `npm run dev:css`: Watch mode for CSS only
+- `npm run dev:js`: Copy JS for development
+- `npm run build`: Production build (minified CSS & JS)
+- `npm run build:css`: Build CSS only
+- `npm run build:js`: Build and minify JS only
 
 ## Browser Support
 

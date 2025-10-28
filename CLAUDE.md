@@ -137,25 +137,51 @@ Your markdown content here...
 
 #### 5. **Asset Pipeline**
 
-**Build Tool**: npm + Tailwind CLI
+**Build Tools**: npm + Tailwind CLI + Terser
 
 **Process**:
 ```bash
-# Development (watch mode)
+# Development (watch mode - runs CSS & JS in parallel)
 npm run dev
 
-# Production (minified)
+# Production (minified CSS & JS)
 npm run build
 ```
 
-**Input**: `assets/src/input.css`
-**Output**: `public/css/style.css`
+**CSS Pipeline**:
+- **Input**: `assets/src/input.css`
+- **Output**: `public/css/style.css`
+- **Tool**: Tailwind CLI with `--minify` flag in production
+
+**JavaScript Pipeline**:
+- **Input**: `assets/src/main.js`
+- **Output**: `public/js/main.js`
+- **Tool**: Terser (compress + mangle) in production
+- **Development**: Simple file copy for debugging
 
 **Configuration**: `tailwind.config.js`
 - Content paths for class detection
 - Custom theme extensions
 - Dark mode configuration
 - Plugin configuration (typography)
+
+**NPM Scripts**:
+```json
+{
+  "dev": "npm run dev:css & npm run dev:js",
+  "dev:css": "npx tailwindcss -i ./assets/src/input.css -o ./public/css/style.css --watch",
+  "dev:js": "cp ./assets/src/main.js ./public/js/main.js",
+  "build": "npm run build:css && npm run build:js",
+  "build:css": "npx tailwindcss -i ./assets/src/input.css -o ./public/css/style.css --minify",
+  "build:js": "npx terser ./assets/src/main.js -o ./public/js/main.js --compress --mangle"
+}
+```
+
+**Rationale**:
+- **Parallel Development**: `&` operator runs CSS and JS watchers simultaneously
+- **Sequential Production**: `&&` ensures CSS builds before JS
+- **Source Separation**: All source files in `assets/src/`, compiled files in `public/`
+- **Performance**: Minified assets in production reduce file size significantly
 
 #### 6. **Dark Mode Implementation**
 
@@ -187,7 +213,8 @@ npm run build
 
 **Implementation**: Intersection Observer API
 
-**File**: `public/js/main.js`
+**Source File**: `assets/src/main.js`
+**Compiled File**: `public/js/main.js` (minified in production)
 
 **How It Works**:
 1. Elements with `.animate-on-scroll` class start invisible
@@ -195,8 +222,12 @@ npm run build
 3. Adds `.visible` class to trigger CSS animations
 4. Unobserves element (animation only happens once)
 
+**Build Process**:
+- **Development**: `npm run dev:js` copies source JS to public folder
+- **Production**: `npm run build:js` minifies JS using Terser (compress + mangle)
+
 **Benefits**:
-- **Performance**: Only animates visible elements
+- **Performance**: Only animates visible elements, minified for production
 - **UX**: Smooth, professional feel
 - **Accessibility**: Respects `prefers-reduced-motion`
 
@@ -292,7 +323,9 @@ $metaKeywords = "keyword1, keyword2, keyword3";
 ### `/assets/`
 **Purpose**: Source files for build process
 
-**Structure**: `/src/input.css` - Tailwind source
+**Structure**:
+- `/src/input.css` - Tailwind CSS source
+- `/src/main.js` - JavaScript source (animations, interactions)
 
 ### `/vendor/` & `/node_modules/`
 **Purpose**: Dependencies (gitignored)
@@ -302,11 +335,14 @@ $metaKeywords = "keyword1, keyword2, keyword3";
 ### 1. **Minimal Dependencies**
 - Only 2 Composer packages (Parsedown, Symfony YAML)
 - Tailwind CSS (purged in production)
+- Font Awesome Pro (Kit-based, optimized loading)
 - No jQuery, no heavy frameworks
 
 ### 2. **Asset Optimization**
-- Minified CSS in production (`npm run build`)
+- Minified CSS in production (`npm run build:css`)
+- Minified JavaScript in production (`npm run build:js` with Terser)
 - Lazy loading for images
+- Font Awesome Kit (only loads used icons)
 - Inline critical CSS (could be added)
 
 ### 3. **Caching Strategy**
@@ -335,13 +371,16 @@ composer install --no-dev --optimize-autoloader
 ```
 
 ### Deployment Checklist
-- [ ] Run production CSS build
+- [ ] Run production build (`npm run build` - builds both CSS & JS)
+- [ ] Verify minified assets (check file sizes in `public/css/` and `public/js/`)
 - [ ] Test all pages
 - [ ] Verify dark mode
 - [ ] Check responsive design
 - [ ] Test language switching
 - [ ] Verify all blog posts load
 - [ ] Check SEO meta tags
+- [ ] Test Font Awesome icons display correctly
+- [ ] Test animations and interactions
 - [ ] Test on multiple browsers
 
 ## Future Enhancements
@@ -383,8 +422,10 @@ composer install --no-dev --optimize-autoloader
 ### What Worked Well
 1. **Markdown-Based Content**: Easy to manage, git-friendly
 2. **Tailwind CSS**: Rapid development, consistent design
-3. **Simple Architecture**: No over-engineering
-4. **DDEV**: Excellent local development experience
+3. **Font Awesome Pro**: Professional icons, consistent design language
+4. **Modern Build Pipeline**: Parallel development, optimized production builds
+5. **Simple Architecture**: No over-engineering
+6. **DDEV**: Excellent local development experience
 
 ### What Could Be Improved
 1. **URL Structure**: Could implement clean URLs with routing
@@ -408,6 +449,6 @@ The architecture is **scalable** (can add more languages, pages, features) while
 
 ---
 
-**Last Updated**: 2024-10-27
+**Last Updated**: 2025-10-28
 **Claude**: Assisted in architecture design and implementation
 **Author**: Samuel Rüegger
