@@ -39,7 +39,8 @@ rueegger.me/
 ├── .ddev/                  # DDEV configuration
 ├── assets/
 │   └── src/
-│       └── input.css       # Tailwind CSS source
+│       ├── input.css       # Tailwind CSS source
+│       └── main.js         # JavaScript source
 ├── content/                # Markdown content
 │   ├── de/                 # German content
 │   │   ├── blog/           # Blog posts
@@ -56,8 +57,8 @@ rueegger.me/
 │   ├── navigation.php      # Navigation component
 │   └── functions.php       # Helper functions
 ├── public/                 # Document root
-│   ├── css/                # Compiled CSS
-│   ├── js/                 # JavaScript files
+│   ├── css/                # Compiled & minified CSS
+│   ├── js/                 # Compiled & minified JavaScript
 │   ├── images/             # Images
 │   ├── media/              # Blog media
 │   ├── index.php           # Homepage
