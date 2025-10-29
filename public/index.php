@@ -29,7 +29,7 @@ include '../includes/header.php';
     <div class="max-w-6xl w-full">
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 items-center">
             <!-- Terminal Window -->
-            <div class="terminal animate-on-scroll">
+            <div class="terminal">
                 <div class="terminal-header">
                     <div class="terminal-dot bg-red-500"></div>
                     <div class="terminal-dot bg-yellow-500"></div>
@@ -60,7 +60,7 @@ include '../includes/header.php';
             </div>
 
             <!-- Profile Image with LCARS Frame -->
-            <div class="animate-on-scroll animation-delay-300">
+            <div>
                 <div class="relative">
                     <div class="absolute -inset-4 border-4 border-[#ff9966] rounded-2xl opacity-30 blur-xl"></div>
                     <div class="relative border-4 border-[#ff9966] rounded-2xl overflow-hidden" style="box-shadow: 0 0 30px rgba(255, 153, 102, 0.5);">
@@ -93,13 +93,13 @@ include '../includes/header.php';
 <!-- Skills LCARS Panels -->
 <section class="py-20 px-4">
     <div class="max-w-7xl mx-auto">
-        <h2 class="section-heading text-center mb-12 animate-on-scroll">
+        <h2 class="section-heading text-center mb-12">
             $ cat ~/expertise/*
         </h2>
 
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
             <!-- Backend -->
-            <div class="lcars-panel p-6 animate-on-scroll">
+            <div class="lcars-panel p-6">
                 <h3 class="text-xl font-bold text-[#ff9966] mb-4 uppercase">// BACKEND</h3>
                 <div class="space-y-2 text-sm">
                     <p class="text-[#00ff00]">&gt; PHP 8.3 / Laravel / Symfony</p>
@@ -110,7 +110,7 @@ include '../includes/header.php';
             </div>
 
             <!-- Frontend -->
-            <div class="lcars-panel-purple p-6 animate-on-scroll animation-delay-200">
+            <div class="lcars-panel-purple p-6">
                 <h3 class="text-xl font-bold text-[#cc99cc] mb-4 uppercase">// FRONTEND</h3>
                 <div class="space-y-2 text-sm">
                     <p class="text-[#00ff00]">&gt; JavaScript / TypeScript</p>
@@ -121,7 +121,7 @@ include '../includes/header.php';
             </div>
 
             <!-- AI/ML -->
-            <div class="lcars-panel-blue p-6 animate-on-scroll animation-delay-400">
+            <div class="lcars-panel-blue p-6">
                 <h3 class="text-xl font-bold text-[#9999ff] mb-4 uppercase">// AI & ML</h3>
                 <div class="space-y-2 text-sm">
                     <p class="text-[#00ff00]">&gt; Claude AI / GPT Integration</p>
@@ -132,7 +132,7 @@ include '../includes/header.php';
             </div>
 
             <!-- DevOps -->
-            <div class="lcars-panel p-6 animate-on-scroll">
+            <div class="lcars-panel p-6">
                 <h3 class="text-xl font-bold text-[#ff9966] mb-4 uppercase">// DEVOPS</h3>
                 <div class="space-y-2 text-sm">
                     <p class="text-[#00ff00]">&gt; Docker / Kubernetes</p>
@@ -143,7 +143,7 @@ include '../includes/header.php';
             </div>
 
             <!-- Tools -->
-            <div class="lcars-panel-purple p-6 animate-on-scroll animation-delay-200">
+            <div class="lcars-panel-purple p-6">
                 <h3 class="text-xl font-bold text-[#cc99cc] mb-4 uppercase">// TOOLS</h3>
                 <div class="space-y-2 text-sm">
                     <p class="text-[#00ff00]">&gt; Git / GitHub / GitLab</p>
@@ -154,7 +154,7 @@ include '../includes/header.php';
             </div>
 
             <!-- Open Source -->
-            <div class="lcars-panel-blue p-6 animate-on-scroll animation-delay-400">
+            <div class="lcars-panel-blue p-6">
                 <h3 class="text-xl font-bold text-[#9999ff] mb-4 uppercase">// OPEN SOURCE</h3>
                 <div class="space-y-2 text-sm">
                     <p class="text-[#00ff00]">&gt; Linux Expert (Ubuntu/Arch)</p>
@@ -170,7 +170,7 @@ include '../includes/header.php';
 <!-- Latest Blog Posts -->
 <section class="py-20 px-4 bg-[#1a1f3a]">
     <div class="max-w-7xl mx-auto">
-        <div class="flex justify-between items-center mb-12 animate-on-scroll">
+        <div class="flex justify-between items-center mb-12">
             <h2 class="text-3xl md:text-4xl font-bold text-[#ff9966] uppercase tracking-wider">
                 $ tail -n 3 ~/blog/posts.log
             </h2>
@@ -185,7 +185,7 @@ include '../includes/header.php';
             $delay = 0;
             foreach ($posts as $post):
             ?>
-            <article class="card animate-on-scroll animation-delay-<?= $delay ?>">
+            <article class="card<?= $delay ?>">
                 <?php if ($post['image']): ?>
                 <img src="<?= e($post['image']) ?>" alt="<?= e($post['title']) ?>" 
                      class="w-full h-48 object-cover rounded mb-4 border-2 border-[#3a4f7a]">

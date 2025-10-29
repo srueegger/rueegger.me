@@ -38,7 +38,7 @@ $projects = [
 
 <div class="pt-24 pb-20 px-4">
     <div class="max-w-7xl mx-auto">
-        <div class="terminal mb-12 animate-on-scroll">
+        <div class="terminal mb-12">
             <div class="terminal-header">
                 <div class="terminal-dot bg-red-500"></div>
                 <div class="terminal-dot bg-yellow-500"></div>
@@ -58,7 +58,7 @@ $projects = [
             <?php $delay = 0; foreach ($projects as $p): 
             $desc = $i18n->getLang() === 'de' ? $p['desc_de'] : $p['desc_en'];
             ?>
-            <div class="lcars-panel p-6 animate-on-scroll animation-delay-<?= $delay ?> hover:border-[#ff9966] transition-all group">
+            <div class="lcars-panel p-6<?= $delay ?> hover:border-[#ff9966] transition-all group">
                 <div class="flex items-start gap-4">
                     <div class="w-16 h-16 flex items-center justify-center rounded-full bg-[#0a0e27] border-2 border-[#ff9966] flex-shrink-0 group-hover:scale-110 transition-all" style="aspect-ratio: 1/1;">
                         <i class="<?= $p['icon'] ?> text-[#ff9966] text-2xl"></i>
@@ -84,7 +84,7 @@ $projects = [
             <?php $delay += 200; endforeach; ?>
         </div>
 
-        <div class="mt-12 text-center animate-on-scroll">
+        <div class="mt-12 text-center">
             <div class="lcars-panel-blue p-8 inline-block">
                 <p class="text-2xl mb-2 text-[#9999ff] font-bold">$ git clone https://github.com/srueegger</p>
                 <a href="https://github.com/srueegger" target="_blank" class="btn btn-secondary mt-4 inline-block">

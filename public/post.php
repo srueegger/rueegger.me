@@ -49,7 +49,7 @@ include '../includes/header.php';
 <article class="pt-24 pb-20 px-4">
     <div class="max-w-4xl mx-auto">
         <!-- Terminal Navigation -->
-        <div class="terminal mb-8 animate-on-scroll">
+        <div class="terminal mb-8">
             <div class="terminal-header">
                 <div class="terminal-dot bg-red-500"></div>
                 <div class="terminal-dot bg-yellow-500"></div>
@@ -68,7 +68,7 @@ include '../includes/header.php';
         </div>
 
         <!-- Article Header in LCARS Panel -->
-        <header class="lcars-panel p-8 mb-8 animate-on-scroll animation-delay-200">
+        <header class="lcars-panel p-8 mb-8">
             <?php if (isset($meta['image']) && $meta['image']): ?>
             <img src="<?= e($meta['image']) ?>" alt="<?= e($meta['title'] ?? '') ?>"
                  class="w-full h-96 object-cover rounded border-4 border-[#ff9966] mb-6"
@@ -96,14 +96,14 @@ include '../includes/header.php';
         </header>
 
         <!-- Article Content -->
-        <div class="lcars-panel p-8 md:p-12 animate-on-scroll animation-delay-400">
+        <div class="lcars-panel p-8 md:p-12">
             <div class="prose prose-lg prose-invert max-w-none post-content">
                 <?= $html ?>
             </div>
         </div>
 
         <!-- Share Section - Terminal Style -->
-        <div class="terminal mt-8 animate-on-scroll animation-delay-600">
+        <div class="terminal mt-8">
             <div class="terminal-content text-sm">
                 <p class="text-[#00ff00] mb-3">
                     $ share --platform [linkedin|whatsapp|facebook|x]
@@ -148,7 +148,7 @@ include '../includes/header.php';
         </div>
 
         <!-- EOF Terminal -->
-        <div class="terminal mt-6 animate-on-scroll animation-delay-800">
+        <div class="terminal mt-6">
             <div class="terminal-content text-sm">
                 <p class="text-[#00ff00]">&gt; EOF reached</p>
                 <p class="text-[#a0b0d0]">&gt; <?= $i18n->getLang() === 'de' ? 'Datei vollständig gelesen' : 'File read complete' ?></p>
