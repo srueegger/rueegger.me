@@ -8,16 +8,35 @@
     <meta name="keywords" content="<?= e($metaKeywords ?? 'Web Development, AI, Artificial Intelligence, PHP, JavaScript, Linux, Technology') ?>">
 
     <!-- Open Graph / Social Media -->
-    <meta property="og:type" content="website">
-    <meta property="og:url" content="<?= e($_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']) ?>">
+    <meta property="og:type" content="<?= isset($ogType) ? e($ogType) : 'website' ?>">
+    <meta property="og:url" content="<?= isset($ogUrl) ? e($ogUrl) : e($_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']) ?>">
     <meta property="og:title" content="<?= e($pageTitle ?? 'Samuel Rüegger - Web Developer & AI Expert') ?>">
     <meta property="og:description" content="<?= e($metaDescription ?? ($i18n->getLang() === 'de' ? 'Web-Entwickler, AI-Experte und Tech-Kreativer' : 'Web Developer, AI Expert & Tech Creative')) ?>">
-    <meta property="og:image" content="<?= asset('images/samuel-rueegger.jpg') ?>">
+    <meta property="og:image" content="<?= isset($ogImage) ? e($ogImage) : e($_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'] . asset('images/samuel-rueegger.jpg')) ?>">
+    <meta property="og:locale" content="<?= $i18n->getLang() === 'de' ? 'de_CH' : 'en_US' ?>">
+    <meta property="og:site_name" content="Samuel Rüegger">
+
+<?php if (isset($articlePublishedTime) && $articlePublishedTime): ?>
+    <meta property="article:published_time" content="<?= e($articlePublishedTime) ?>">
+<?php endif; ?>
+
+<?php if (isset($articleAuthor) && $articleAuthor): ?>
+    <meta property="article:author" content="<?= e($articleAuthor) ?>">
+<?php endif; ?>
+
+<?php if (isset($articleTags) && is_array($articleTags)): ?>
+    <?php foreach ($articleTags as $tag): ?>
+    <meta property="article:tag" content="<?= e($tag) ?>">
+    <?php endforeach; ?>
+<?php endif; ?>
 
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:site" content="@srueegger">
     <meta name="twitter:creator" content="@srueegger">
+    <meta name="twitter:title" content="<?= e($pageTitle ?? 'Samuel Rüegger - Web Developer & AI Expert') ?>">
+    <meta name="twitter:description" content="<?= e($metaDescription ?? ($i18n->getLang() === 'de' ? 'Web-Entwickler, AI-Experte und Tech-Kreativer' : 'Web Developer, AI Expert & Tech Creative')) ?>">
+    <meta name="twitter:image" content="<?= isset($ogImage) ? e($ogImage) : e($_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'] . asset('images/samuel-rueegger.jpg')) ?>">
 
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="<?= asset('favicon.svg') ?>">

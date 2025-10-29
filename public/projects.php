@@ -5,6 +5,15 @@ use App\I18n;
 
 $i18n = new I18n('../content');
 $pageTitle = $i18n->getLang() === 'de' ? 'Projekte - Samuel Rüegger' : 'Projects - Samuel Rüegger';
+$metaDescription = $i18n->getLang() === 'de'
+    ? 'Entdecke meine Projekte: GuideOS, helfen-helfen, LinuxGuides und mehr. Open-Source-Projekte und Community-Initiativen.'
+    : 'Discover my projects: GuideOS, helfen-helfen, LinuxGuides and more. Open-source projects and community initiatives.';
+
+// OG meta tags
+$ogImage = $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'] . '/images/samuel-rueegger.jpg';
+$ogUrl = $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+$ogType = 'website';
+
 include '../includes/header.php';
 
 $projects = [

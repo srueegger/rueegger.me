@@ -6,6 +6,12 @@ use App\I18n;
 $i18n = new I18n('../content');
 $pageTitle = 'Blog - Samuel Rüegger';
 $metaDescription = $i18n->getLang() === 'de' ? 'Tech-Blog über Webentwicklung, AI, Linux' : 'Tech blog about web development, AI, Linux';
+
+// OG meta tags
+$ogImage = $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'] . '/images/samuel-rueegger.jpg';
+$ogUrl = $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+$ogType = 'website';
+
 include '../includes/header.php';
 $posts = $i18n->getBlogPosts();
 ?>

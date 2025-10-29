@@ -16,6 +16,11 @@ $metaDescription = $i18n->getLang() === 'de'
     ? 'Portfolio von Samuel Rüegger - Nerdiger Web-Entwickler, AI-Experte. Terminal-Aesthetik trifft moderne Webentwicklung.'
     : 'Portfolio of Samuel Rüegger - Nerdy Web Developer, AI Expert. Terminal aesthetics meet modern web development.';
 
+// OG meta tags
+$ogImage = $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'] . '/images/samuel-rueegger.jpg';
+$ogUrl = $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+$ogType = 'website';
+
 include '../includes/header.php';
 ?>
 

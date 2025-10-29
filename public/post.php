@@ -35,6 +35,14 @@ $pageTitle = ($meta['title'] ?? 'Blog Post') . ' - Samuel Rüegger';
 $metaDescription = $meta['excerpt'] ?? '';
 $metaKeywords = isset($meta['tags']) && is_array($meta['tags']) ? implode(', ', $meta['tags']) : '';
 
+// OG and Twitter meta tags
+$ogImage = isset($meta['image']) && $meta['image'] ? $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'] . $meta['image'] : $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'] . '/images/samuel-rueegger.jpg';
+$ogUrl = $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+$ogType = 'article';
+$articlePublishedTime = isset($meta['date']) ? date('c', strtotime($meta['date'])) : '';
+$articleAuthor = 'Samuel Rüegger';
+$articleTags = isset($meta['tags']) && is_array($meta['tags']) ? $meta['tags'] : [];
+
 include '../includes/header.php';
 ?>
 

@@ -13,6 +13,11 @@ $metaDescription = $i18n->getLang() === 'de'
     ? 'Impressum und rechtliche Angaben von rueegger.me'
     : 'Imprint and legal information of rueegger.me';
 
+// OG meta tags
+$ogImage = $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'] . '/images/samuel-rueegger.jpg';
+$ogUrl = $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
+$ogType = 'website';
+
 include '../includes/header.php';
 
 $content = $i18n->loadContent('pages/imprint');
