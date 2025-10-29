@@ -9,6 +9,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const observer = new IntersectionObserver(function(entries) {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
+                entry.target.classList.remove('pending');
                 entry.target.classList.add('visible');
                 observer.unobserve(entry.target);
             }
@@ -17,7 +18,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     // Observe all elements with animation class
     document.querySelectorAll('.animate-on-scroll').forEach(el => {
-        // Check if element is already in viewport on page load
+        // Check if element is already in viewport
         const rect = el.getBoundingClientRect();
         const isInViewport = (
             rect.top >= 0 &&
@@ -26,13 +27,12 @@ document.addEventListener('DOMContentLoaded', function() {
             rect.right <= (window.innerWidth || document.documentElement.clientWidth)
         );
 
-        // If element is already visible, show it immediately
-        if (isInViewport) {
-            el.classList.add('visible');
-        } else {
-            // Otherwise, observe it for scroll animation
+        // If element is NOT in viewport, mark it as pending (hidden) and observe it
+        if (!isInViewport) {
+            el.classList.add('pending');
             observer.observe(el);
         }
+        // Elements in viewport remain visible (default state)
     });
 
     // Smooth scroll for anchor links
