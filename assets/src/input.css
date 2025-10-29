@@ -47,7 +47,7 @@
     background-size: 100% 2px;
   }
 
-  /* CRT Monitor effect */
+  /* CRT Monitor effect - limited to initial page load only */
   @media (prefers-reduced-motion: no-preference) {
     body::before {
       content: " ";
@@ -62,32 +62,19 @@
       z-index: 2;
       background-size: 100% 2px, 3px 100%;
       pointer-events: none;
-      animation: flicker 0.15s infinite;
+      /* Flicker 4 times (4 iterations × 0.15s = 0.6s) then stop */
+      animation: flicker 0.15s 4;
+      /* End with subtle, stable opacity */
+      animation-fill-mode: forwards;
     }
   }
 
   @keyframes flicker {
-    0% { opacity: 0.27861; }
-    5% { opacity: 0.34769; }
-    10% { opacity: 0.23604; }
-    15% { opacity: 0.90626; }
-    20% { opacity: 0.18128; }
-    25% { opacity: 0.83891; }
-    30% { opacity: 0.65583; }
-    35% { opacity: 0.67807; }
-    40% { opacity: 0.26559; }
-    45% { opacity: 0.84693; }
-    50% { opacity: 0.96019; }
-    55% { opacity: 0.08594; }
-    60% { opacity: 0.20313; }
-    65% { opacity: 0.71988; }
-    70% { opacity: 0.53455; }
-    75% { opacity: 0.37288; }
-    80% { opacity: 0.71428; }
-    85% { opacity: 0.70419; }
-    90% { opacity: 0.7003; }
-    95% { opacity: 0.36108; }
-    100% { opacity: 0.24387; }
+    0% { opacity: 0.27; }
+    25% { opacity: 0.15; }
+    50% { opacity: 0.35; }
+    75% { opacity: 0.20; }
+    100% { opacity: 0.25; }
   }
 
   h1, h2, h3, h4, h5, h6 {
