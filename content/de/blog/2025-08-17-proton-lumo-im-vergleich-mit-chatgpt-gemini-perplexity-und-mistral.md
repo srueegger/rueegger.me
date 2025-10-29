@@ -3,6 +3,7 @@ title: "Proton Lumo im Vergleich mit ChatGPT, Gemini, Perplexity und Mistral"
 date: "2025-08-17"
 excerpt: "Proton Lumo verspricht KI-Chats mit Datenschutz. Wie schlägt sich der neue Dienst gegen ChatGPT, Gemini, Perplexity und Mistral? Ein ausführlicher Vergleichstest."
 tags: ["AI", "Proton", "ChatGPT", "Gemini", "Datenschutz"]
+image: "/media/blog/proton-lumo.png"
 ---
 
 # Proton Lumo im Vergleich mit ChatGPT, Gemini, Perplexity und Mistral

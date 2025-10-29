@@ -3,6 +3,7 @@ title: "Ubuntu 25.10: Warum der Wechsel von initramfs-tools zu dracut wichtig is
 date: "2025-10-21"
 excerpt: "Ubuntu 25.10 wechselt von initramfs-tools zu dracut. Was bedeutet das für Nutzer und warum ist dieser Schritt wichtig für die Zukunft?"
 tags: ["Ubuntu", "Linux", "Dracut", "Boot"]
+image: "/media/blog/ubuntu-dracut.png"
 ---
 
 # Ubuntu 25.10: Warum der Wechsel von initramfs-tools zu dracut wichtig ist

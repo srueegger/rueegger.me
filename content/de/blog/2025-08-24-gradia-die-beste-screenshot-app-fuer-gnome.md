@@ -3,6 +3,7 @@ title: "Gradia – die beste Screenshot-App für GNOME | App-Vorstellung"
 date: "2025-08-24"
 excerpt: "Endlich eine native Screenshot-App für GNOME, die Aufnahme und Bearbeitung vereint. Gradia löst ein langjähriges Problem des GNOME-Desktops."
 tags: ["GNOME", "Linux", "Screenshot", "Apps"]
+image: "/media/blog/gradia-screenshot.png"
 ---
 
 # Gradia – die beste Screenshot-App für GNOME
@@ -80,3 +81,13 @@ Screenshots können nicht nur aufgenommen, sondern auch direkt bearbeitet werden
 ❌ **KDE-Nutzer:** Spectacle ist besser
 
 Wenn du GNOME nutzt, probier Gradia aus. Du wirst Flameshot nicht vermissen.
+
+## Screenshots
+
+![Gradia Bearbeitungsansicht](/media/blog/gradia-2.webp)
+
+![Gradia Werkzeuge](/media/blog/gradia-3.webp)
+
+![Gradia Export-Optionen](/media/blog/gradia-4.webp)
+
+![Gradia in Aktion](/media/blog/gradia-5.webp)

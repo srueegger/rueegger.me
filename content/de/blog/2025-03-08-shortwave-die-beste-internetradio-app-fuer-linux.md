@@ -3,6 +3,7 @@ title: "Shortwave – Die beste Internetradio-App für Linux | App-Vorstellung"
 date: "2025-03-08"
 excerpt: "Shortwave macht das Entdecken und Hören von Radiosendern weltweit besonders einfach. Eine native GNOME-App mit Aufnahmefunktion."
 tags: ["GNOME", "Linux", "Apps", "Radio"]
+image: "/media/blog/shortwave.png"
 ---
 
 # Shortwave – Die beste Internetradio-App für Linux
@@ -104,3 +105,13 @@ Shortwave ist eine **perfekte GNOME-App**:
 - Du kein Interesse an Radio hast
 
 **Mein Fazit:** Shortwave ist die beste Internetradio-App für Linux. Wenn du GNOME nutzt, ist es ein Muss.
+
+## Screenshots
+
+![Shortwave Hauptfenster](/media/blog/shortwave-2.webp)
+
+![Sender-Suche](/media/blog/shortwave-3.webp)
+
+![Bibliothek mit gespeicherten Sendern](/media/blog/shortwave-4.webp)
+
+![Aufnahme-Funktion](/media/blog/shortwave-5.webp)

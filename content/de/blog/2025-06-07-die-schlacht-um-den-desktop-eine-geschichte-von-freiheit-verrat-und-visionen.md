@@ -3,6 +3,7 @@ title: "Die Schlacht um den Desktop: Eine Geschichte von Freiheit, Verrat und Vi
 date: "2025-06-07"
 excerpt: "Warum gibt es so viele Linux-Desktops? Eine Geschichte von philosophischen Debatten, Design-Konflikten und den Visionen, die daraus entstanden sind."
 tags: ["Linux", "KDE", "GNOME", "Desktop", "Geschichte"]
+image: "/media/blog/desktop-battle-kde.png"
 ---
 
 # Die Schlacht um den Desktop: Eine Geschichte von Freiheit, Verrat und Visionen

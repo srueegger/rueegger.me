@@ -3,6 +3,7 @@ title: "Zwei Monate mit TUXEDO OS – Eindrücke eines Linux-Veteranen aus Einst
 date: "2025-08-14"
 excerpt: "TUXEDO OS im Langzeittest auf einem HP EliteBook. Ein erfahrener Linux-Nutzer nimmt bewusst die Einsteiger-Perspektive ein."
 tags: ["TUXEDO OS", "KDE Plasma", "Linux", "Review"]
+image: "/media/blog/tuxedo-os.png"
 ---
 
 # Zwei Monate mit TUXEDO OS – Eindrücke eines Linux-Veteranen
@@ -98,3 +99,17 @@ TUXEDO OS fühlt sich an wie ein **fertiges Produkt** – kuratiert, technisch s
 - Du maximale Anpassungsfähigkeit brauchst
 
 **Mein Plan:** Ich werde mir Ende 2025 TUXEDO-Hardware kaufen. Das System hat mich überzeugt.
+
+## Screenshots
+
+![TUXEDO Control Center](/media/blog/tuxedo-2.webp)
+
+![KDE Plasma Desktop](/media/blog/tuxedo-3.webp)
+
+![System-Einstellungen](/media/blog/tuxedo-4.webp)
+
+![Performance-Profile](/media/blog/tuxedo-5.webp)
+
+![Lüfter-Steuerung](/media/blog/tuxedo-6.webp)
+
+![WebFAI Tool](/media/blog/tuxedo-7.webp)
