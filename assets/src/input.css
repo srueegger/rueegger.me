@@ -293,18 +293,8 @@
     text-wrap: balance;
   }
 
+  /* Scroll animations removed - caused visibility issues on mobile */
   .animate-on-scroll {
-    opacity: 1;
-    transform: translateY(0);
-    transition: opacity 0.8s ease-out, transform 0.8s ease-out;
-  }
-
-  .animate-on-scroll.pending {
-    opacity: 0;
-    transform: translateY(30px);
-  }
-
-  .animate-on-scroll.visible {
     opacity: 1;
     transform: translateY(0);
   }

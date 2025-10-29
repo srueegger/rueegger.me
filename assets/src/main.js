@@ -1,39 +1,7 @@
-// Scroll animations
+// Smooth scrolling and interactions
 document.addEventListener('DOMContentLoaded', function() {
-    // Intersection Observer for scroll animations
-    const observerOptions = {
-        threshold: 0.1,
-        rootMargin: '0px 0px -50px 0px'
-    };
-
-    const observer = new IntersectionObserver(function(entries) {
-        entries.forEach(entry => {
-            if (entry.isIntersecting) {
-                entry.target.classList.remove('pending');
-                entry.target.classList.add('visible');
-                observer.unobserve(entry.target);
-            }
-        });
-    }, observerOptions);
-
-    // Observe all elements with animation class
-    document.querySelectorAll('.animate-on-scroll').forEach(el => {
-        // Check if element is already in viewport
-        const rect = el.getBoundingClientRect();
-        const isInViewport = (
-            rect.top >= 0 &&
-            rect.left >= 0 &&
-            rect.bottom <= (window.innerHeight || document.documentElement.clientHeight) &&
-            rect.right <= (window.innerWidth || document.documentElement.clientWidth)
-        );
-
-        // If element is NOT in viewport, mark it as pending (hidden) and observe it
-        if (!isInViewport) {
-            el.classList.add('pending');
-            observer.observe(el);
-        }
-        // Elements in viewport remain visible (default state)
-    });
+    // Scroll animations removed - caused visibility issues on mobile
+    // All elements with .animate-on-scroll are now immediately visible
 
     // Smooth scroll for anchor links
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
