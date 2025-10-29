@@ -22,7 +22,7 @@ include '../includes/header.php';
 <div class="pt-24 pb-20 px-4">
     <div class="max-w-4xl mx-auto">
         <!-- Terminal Header -->
-        <div class="terminal mb-8 animate-on-scroll">
+        <div class="terminal mb-8">
             <div class="terminal-header">
                 <div class="terminal-dot bg-red-500"></div>
                 <div class="terminal-dot bg-yellow-500"></div>
@@ -37,7 +37,7 @@ include '../includes/header.php';
         </div>
 
         <!-- Email - Primary Channel -->
-        <div class="lcars-panel p-6 animate-on-scroll">
+        <div class="lcars-panel p-6">
             <div class="flex items-start gap-4">
                 <div class="w-16 h-16 flex items-center justify-center rounded-full bg-[#0a0e27] border-2 border-[#ff9966] flex-shrink-0" style="aspect-ratio: 1/1;">
                     <i class="fa-solid fa-envelope text-[#ff9966] text-2xl"></i>
@@ -60,7 +60,7 @@ include '../includes/header.php';
         </div>
 
         <!-- Social Networks -->
-        <div class="lcars-panel-purple p-6 animate-on-scroll animation-delay-200">
+        <div class="lcars-panel-purple p-6">
             <div class="flex items-start gap-4 mb-4">
                 <div class="w-16 h-16 flex items-center justify-center rounded-full bg-[#0a0e27] border-2 border-[#cc99cc] flex-shrink-0" style="aspect-ratio: 1/1;">
                     <i class="fa-solid fa-share-nodes text-[#cc99cc] text-2xl"></i>
@@ -102,7 +102,7 @@ include '../includes/header.php';
         </div>
 
         <!-- Response Time -->
-        <div class="lcars-panel-blue p-6 animate-on-scroll animation-delay-400">
+        <div class="lcars-panel-blue p-6">
             <div class="flex items-start gap-4">
                 <div class="w-16 h-16 flex items-center justify-center rounded-full bg-[#0a0e27] border-2 border-[#9999ff] flex-shrink-0" style="aspect-ratio: 1/1;">
                     <i class="fa-solid fa-clock text-[#9999ff] text-2xl"></i>
@@ -128,7 +128,7 @@ include '../includes/header.php';
         </div>
 
         <!-- Connection Status Footer -->
-        <div class="terminal mt-8 animate-on-scroll animation-delay-600">
+        <div class="terminal mt-8">
             <div class="terminal-content text-sm">
                 <p class="text-[#00ff00]">$ ping samuel@rueegger.me</p>
                 <p class="text-[#a0b0d0] mt-2">&gt; PING successful (24-48ms latency)</p>

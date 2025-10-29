@@ -18,7 +18,7 @@ $posts = $i18n->getBlogPosts();
 
 <div class="pt-24 pb-20 px-4">
     <div class="max-w-7xl mx-auto">
-        <div class="terminal mb-12 animate-on-scroll">
+        <div class="terminal mb-12">
             <div class="terminal-header">
                 <div class="terminal-dot bg-red-500"></div>
                 <div class="terminal-dot bg-yellow-500"></div>
@@ -40,7 +40,7 @@ $posts = $i18n->getBlogPosts();
         <?php else: ?>
         <div class="space-y-6">
             <?php foreach ($posts as $i => $post): ?>
-            <article class="lcars-panel p-6 hover:border-[#00ff00] transition-all animate-on-scroll">
+            <article class="lcars-panel p-6 hover:border-[#00ff00] transition-all">
                 <div class="flex flex-col md:flex-row gap-6">
                     <?php if ($post['image']): ?>
                     <div class="md:w-48 flex-shrink-0">

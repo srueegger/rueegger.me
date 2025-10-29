@@ -26,7 +26,7 @@ $html = $content ? $parser->parse($content) : '';
 
 <div class="pt-24 pb-20 bg-gradient-to-br from-blue-50 via-white to-purple-50 dark:from-gray-900 dark:via-gray-900 dark:to-gray-800">
     <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8">
-        <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8 md:p-12 animate-on-scroll">
+        <div class="bg-white dark:bg-gray-800 rounded-2xl shadow-xl p-8 md:p-12">
             <div class="prose prose-lg dark:prose-invert max-w-none">
                 <?= $html ?>
             </div>

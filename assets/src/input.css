@@ -351,26 +351,7 @@
     animation: pulse-glow 2s infinite;
   }
 
-  /* Principle card animations */
-  @keyframes card-float-in {
-    0% {
-      opacity: 0;
-      transform: translateY(20px) scale(0.95);
-    }
-    100% {
-      opacity: 1;
-      transform: translateY(0) scale(1);
-    }
-  }
-
-  .principle-card {
-    animation: card-float-in 0.6s ease-out forwards;
-    opacity: 0;
-  }
-
-  .principle-card.visible {
-    animation: card-float-in 0.6s ease-out forwards;
-  }
+  /* Principle card animations removed - caused visibility issues */
 }
 
 /* Responsive title handling - prevent overflow */

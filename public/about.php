@@ -28,7 +28,7 @@ $html = $content ? $parser->parse($content) : '';
 <div class="pt-24 pb-20 px-4">
     <div class="max-w-4xl mx-auto">
         <!-- Terminal Header -->
-        <div class="terminal mb-8 animate-on-scroll">
+        <div class="terminal mb-8">
             <div class="terminal-header">
                 <div class="terminal-dot bg-red-500"></div>
                 <div class="terminal-dot bg-yellow-500"></div>
@@ -43,7 +43,7 @@ $html = $content ? $parser->parse($content) : '';
         </div>
 
         <!-- Content in LCARS Panel -->
-        <div class="lcars-panel p-8 md:p-12 animate-on-scroll animation-delay-200">
+        <div class="lcars-panel p-8 md:p-12">
             <div class="prose prose-lg prose-invert max-w-none about-content">
                 <?php
                 // Extract principles section and replace with custom cards
@@ -99,8 +99,7 @@ $html = $content ? $parser->parse($content) : '';
 
                 <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-4 my-8 not-prose">
                     <?php foreach ($principles as $index => $principle): ?>
-                    <div class="principle-card group bg-[#1a1f3a] border-2 border-[#3a4f7a] rounded-lg p-6 transition-all duration-300 hover:border-[#ff9966] hover:shadow-lg hover:shadow-[#ff9966]/20 hover:-translate-y-1"
-                         style="animation-delay: <?= $index * 100 ?>ms;">
+                    <div class="principle-card group bg-[#1a1f3a] border-2 border-[#3a4f7a] rounded-lg p-6 transition-all duration-300 hover:border-[#ff9966] hover:shadow-lg hover:shadow-[#ff9966]/20 hover:-translate-y-1">
                         <div class="flex flex-col items-center text-center">
                             <div class="principle-icon w-20 h-20 rounded-full bg-[#0a0e27] border-2 border-[#ff9966] flex items-center justify-center transition-all duration-300 group-hover:scale-110 group-hover:rotate-12 group-hover:shadow-lg group-hover:shadow-[#ff9966]/50 mb-4" style="aspect-ratio: 1/1;">
                                 <i class="<?= $principle['icon'] ?> text-[#ff9966] text-3xl"></i>
@@ -121,7 +120,7 @@ $html = $content ? $parser->parse($content) : '';
         </div>
 
         <!-- File Info Footer -->
-        <div class="mt-6 lcars-panel-blue p-4 text-sm font-mono animate-on-scroll animation-delay-400">
+        <div class="mt-6 lcars-panel-blue p-4 text-sm font-mono">
             <div class="flex justify-between text-[#a0b0d0]">
                 <span>&gt; EOF reached</span>
                 <span><?= $i18n->getLang() === 'de' ? 'Datei vollständig gelesen' : 'File read complete' ?></span>
