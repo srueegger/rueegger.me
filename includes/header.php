@@ -52,9 +52,6 @@
     <!-- Styles -->
     <link rel="stylesheet" href="<?= asset('css/style.css') ?>">
 
-    <!-- Font Awesome Pro -->
-    <script src="https://kit.fontawesome.com/3770a9ceab.js" crossorigin="anonymous"></script>
-
     <title><?= e($pageTitle ?? 'Samuel Rüegger - Web Developer & AI Expert') ?></title>
 </head>
 <body class="antialiased">

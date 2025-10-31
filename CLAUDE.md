@@ -30,14 +30,14 @@
 - **Performance**: PurgeCSS removes unused styles in production
 - **Customization**: Easy to extend and modify
 
-#### Why Font Awesome Pro?
+#### Why Inline SVG Icons?
 
-- **Professional Icons**: Access to 30,000+ premium icons
-- **Consistent Design**: All icons follow the same design language
-- **Performance**: Icon fonts load fast and scale perfectly
-- **Brand Icons**: Official brand icons for social media platforms
-- **Customization**: Easy to style with CSS (color, size, animations)
-- **Kit Implementation**: Using Font Awesome Kit (ID: 3770a9ceab) for automatic updates
+- **Performance**: No external dependencies or CDN requests
+- **Control**: Full control over styling and animations
+- **Lightweight**: Only icons actually used are included in the HTML
+- **Customization**: Direct CSS manipulation with `fill` and size classes
+- **Self-Contained**: All assets hosted locally, no third-party scripts
+- **Accessibility**: Easy to add aria-labels and titles for screen readers
 
 #### Why Markdown for Content?
 
@@ -335,14 +335,14 @@ $metaKeywords = "keyword1, keyword2, keyword3";
 ### 1. **Minimal Dependencies**
 - Only 2 Composer packages (Parsedown, Symfony YAML)
 - Tailwind CSS (purged in production)
-- Font Awesome Pro (Kit-based, optimized loading)
+- Inline SVG icons (no external icon library)
 - No jQuery, no heavy frameworks
 
 ### 2. **Asset Optimization**
 - Minified CSS in production (`npm run build:css`)
 - Minified JavaScript in production (`npm run build:js` with Terser)
 - Lazy loading for images
-- Font Awesome Kit (only loads used icons)
+- Inline SVG icons (zero external requests)
 - Inline critical CSS (could be added)
 
 ### 3. **Caching Strategy**
@@ -379,7 +379,7 @@ composer install --no-dev --optimize-autoloader
 - [ ] Test language switching
 - [ ] Verify all blog posts load
 - [ ] Check SEO meta tags
-- [ ] Test Font Awesome icons display correctly
+- [ ] Test inline SVG icons display correctly across all pages
 - [ ] Test animations and interactions
 - [ ] Test on multiple browsers
 
@@ -422,7 +422,7 @@ composer install --no-dev --optimize-autoloader
 ### What Worked Well
 1. **Markdown-Based Content**: Easy to manage, git-friendly
 2. **Tailwind CSS**: Rapid development, consistent design
-3. **Font Awesome Pro**: Professional icons, consistent design language
+3. **Inline SVG Icons**: Zero dependencies, full control, better performance
 4. **Modern Build Pipeline**: Parallel development, optimized production builds
 5. **Simple Architecture**: No over-engineering
 6. **DDEV**: Excellent local development experience
@@ -449,6 +449,21 @@ The architecture is **scalable** (can add more languages, pages, features) while
 
 ---
 
-**Last Updated**: 2025-10-28
+**Last Updated**: 2025-10-31
 **Claude**: Assisted in architecture design and implementation
 **Author**: Samuel Rüegger
+
+## Icon Implementation
+
+The website uses inline SVG icons instead of external icon libraries. All icons are:
+
+- Embedded directly in PHP/HTML for zero external requests
+- From Font Awesome Free (version 7.1.0) - fully open source
+- Styled with Tailwind utility classes (`fill-current`, `w-4`, `h-4`, etc.)
+- Optimized for performance with no CDN dependencies
+
+**Icons Used:**
+- **Brand Icons**: LinkedIn, WhatsApp, Facebook, X/Twitter, GitHub, Mastodon, Instagram
+- **Solid Icons**: Code, Code Branch, Graduation Cap, Shield, Rocket, Coffee Mug, Envelope, Share Nodes, Clock, Arrow Up Right, Hands Holding Circle
+
+All SVG code is sourced from Font Awesome Free and embedded directly in the templates for maximum performance and control.

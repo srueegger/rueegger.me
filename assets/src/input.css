@@ -273,6 +273,11 @@
   .prose a {
     @apply text-[#ff9966] hover:text-[#ffb000] underline;
   }
+
+  /* Social media icon hover effect */
+  .social-icon-link:hover .social-icon {
+    fill: #00ff00 !important;
+  }
 }
 
 @layer utilities {
