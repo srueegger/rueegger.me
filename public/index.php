@@ -64,9 +64,7 @@ include '../includes/header.php';
                 <div class="relative">
                     <div class="absolute -inset-4 border-4 border-[#ff9966] rounded-2xl opacity-30 blur-xl"></div>
                     <div class="relative border-4 border-[#ff9966] rounded-2xl overflow-hidden" style="box-shadow: 0 0 30px rgba(255, 153, 102, 0.5);">
-                        <img src="<?= asset('images/samuel-rueegger.jpg') ?>" 
-                             alt="Samuel Rüegger - Web Developer & AI Expert"
-                             class="w-full h-auto">
+                        <?= responsiveImage('images/samuel-rueegger.jpg', 'Samuel Rüegger - Web Developer & AI Expert', 'profile', 'w-full h-auto') ?>
                     </div>
                     <div class="absolute -bottom-4 -right-4 status-bar">
                         STATUS: ONLINE
@@ -187,8 +185,9 @@ include '../includes/header.php';
             ?>
             <article class="card<?= $delay ?>">
                 <?php if ($post['image']): ?>
-                <img src="<?= e($post['image']) ?>" alt="<?= e($post['title']) ?>" 
-                     class="w-full h-48 object-cover rounded mb-4 border-2 border-[#3a4f7a]">
+                <div class="mb-4">
+                    <?= responsiveImage(ltrim($post['image'], '/'), e($post['title']), 'card', 'w-full h-48 object-cover rounded border-2 border-[#3a4f7a]') ?>
+                </div>
                 <?php endif; ?>
                 
                 <div class="flex flex-wrap gap-2 mb-3">

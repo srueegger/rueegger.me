@@ -70,9 +70,9 @@ include '../includes/header.php';
         <!-- Article Header in LCARS Panel -->
         <header class="lcars-panel p-8 mb-8">
             <?php if (isset($meta['image']) && $meta['image']): ?>
-            <img src="<?= e($meta['image']) ?>" alt="<?= e($meta['title'] ?? '') ?>"
-                 class="w-full h-96 object-cover rounded border-4 border-[#ff9966] mb-6"
-                 style="box-shadow: 0 0 30px rgba(255, 153, 102, 0.5);">
+            <div class="mb-6" style="box-shadow: 0 0 30px rgba(255, 153, 102, 0.5);">
+                <?= responsiveImage(ltrim($meta['image'], '/'), e($meta['title'] ?? ''), 'hero', 'w-full h-96 object-cover rounded border-4 border-[#ff9966]') ?>
+            </div>
             <?php endif; ?>
 
             <div class="flex flex-wrap gap-2 mb-4">
