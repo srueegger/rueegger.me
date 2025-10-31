@@ -23,7 +23,7 @@ Modern personal portfolio website for Samuel Rüegger - Web Developer, AI Expert
 
 ### Frontend
 - **Tailwind CSS**: Utility-first CSS framework
-- **Font Awesome Pro**: Premium icon library (Kit ID: 3770a9ceab)
+- **Inline SVG Icons**: From Font Awesome Free 7.1.0 (no external dependencies)
 - **Vanilla JavaScript**: Scroll animations and interactions
 - **CSS Custom Properties**: Theme support
 
@@ -87,7 +87,6 @@ rueegger.me/
 - **Node.js 18+** & npm
 - **DDEV** (optional, recommended for local development)
 - **Git**
-- **Font Awesome Pro Kit** (Kit ID: 3770a9ceab - already configured in project)
 
 ### Installation
 
