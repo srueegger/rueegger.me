@@ -17,7 +17,7 @@ const path = require('path');
 
 // Configuration
 const config = {
-  sourceDir: 'public/media/source',
+  sourceDir: 'media/source',
   outputDir: 'public/media/generated',
 
   // Image size presets for different use cases
