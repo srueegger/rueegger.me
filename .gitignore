@@ -10,6 +10,9 @@
 /public/sitemap.xml
 /assets/build
 
+# Generated images (source images are tracked in /media/source/)
+/public/media/generated/
+
 # OS files
 .DS_Store
 Thumbs.db
