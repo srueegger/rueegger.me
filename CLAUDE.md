@@ -231,7 +231,103 @@ npm run build
 - **UX**: Smooth, professional feel
 - **Accessibility**: Respects `prefers-reduced-motion`
 
-#### 8. **SEO Strategy**
+#### 8. **Responsive Image System**
+
+**Implementation**: Build-time image processing with Sharp
+
+**Files**:
+- `scripts/process-images.js`: Node.js script for image processing
+- `includes/functions.php`: `responsiveImage()` helper function
+- `includes/classes/MarkdownParser.php`: Automatic image conversion
+
+**Architecture**:
+```
+media/
+└── source/              # Source images (tracked in Git)
+    ├── images/
+    │   └── blog/
+    └── media/
+        └── blog/
+
+public/
+└── media/
+    └── generated/       # Generated images (gitignored)
+        ├── images/
+        │   └── blog/
+        └── media/
+            └── blog/
+```
+
+**Processing Pipeline**:
+1. Source images stored in `media/source/`
+2. Build script generates optimized variants:
+   - **Formats**: AVIF, WebP, JPEG (in order of preference)
+   - **Sizes**: Based on use case preset (hero, thumbnail, card, profile)
+   - **Quality**: AVIF 82%, WebP 88%, JPEG 85%
+3. Generated images saved to `public/media/generated/`
+
+**Size Presets**:
+- **Hero**: [480, 768, 1024, 1536] - Blog post hero images (max-w-4xl)
+- **Thumbnail**: [200, 400, 600] - Blog listing thumbnails (md:w-48)
+- **Card**: [400, 600, 800, 1200] - Blog cards on homepage (~400px)
+- **Profile**: [400, 600, 800, 1200] - Profile and general images
+
+**HTML Output** (via `responsiveImage()` function):
+```html
+<picture>
+  <source
+    type="image/avif"
+    srcset="/media/generated/images/example-400w.avif 400w,
+            /media/generated/images/example-600w.avif 600w,
+            /media/generated/images/example-800w.avif 800w"
+    sizes="(max-width: 768px) 100vw, 50vw">
+  <source
+    type="image/webp"
+    srcset="/media/generated/images/example-400w.webp 400w,
+            /media/generated/images/example-600w.webp 600w,
+            /media/generated/images/example-800w.webp 800w"
+    sizes="(max-width: 768px) 100vw, 50vw">
+  <img
+    src="/media/generated/images/example-800w.jpeg"
+    srcset="/media/generated/images/example-400w.jpeg 400w,
+            /media/generated/images/example-600w.jpeg 600w,
+            /media/generated/images/example-800w.jpeg 800w"
+    sizes="(max-width: 768px) 100vw, 50vw"
+    alt="Description"
+    loading="lazy"
+    class="...">
+</picture>
+```
+
+**Automatic Markdown Conversion**:
+The `MarkdownParser` automatically converts standard `<img>` tags to responsive `<picture>` elements:
+- Extracts `src`, `alt`, and `class` attributes
+- Skips external images (http/https URLs)
+- Auto-detects preset based on image path
+- Preserves alt text and CSS classes
+
+**Build Integration**:
+```bash
+npm run build:images    # Process all images
+npm run build           # Full build (includes images)
+```
+
+**Benefits**:
+- **Performance**: Optimized file sizes (AVIF ~60% smaller than JPEG)
+- **Modern Formats**: Browser selects best supported format
+- **Responsive**: Right size for each viewport and device pixel ratio
+- **Automatic**: No manual intervention needed for Markdown images
+- **Git-Friendly**: Only source images tracked, generated files excluded
+- **Fast Builds**: Sharp uses libvips (faster than ImageMagick)
+
+**Rationale**:
+- **Build-Time vs Runtime**: Processing at build time avoids server overhead
+- **Width Descriptors**: Modern approach, browser handles device pixel ratio automatically
+- **Quality Settings**: Optimal balance between file size and visual quality
+- **Multiple Formats**: AVIF for modern browsers, WebP as fallback, JPEG for legacy support
+- **Native Lazy Loading**: Using HTML `loading="lazy"` instead of JavaScript
+
+#### 9. **SEO Strategy**
 
 **Implementation**:
 - Unique `<title>` and meta descriptions per page
@@ -250,7 +346,7 @@ $metaDescription = "Page description...";
 $metaKeywords = "keyword1, keyword2, keyword3";
 ```
 
-#### 9. **Blog System Architecture**
+#### 10. **Blog System Architecture**
 
 **Design**: File-based blog system using Markdown
 
@@ -275,7 +371,7 @@ $metaKeywords = "keyword1, keyword2, keyword3";
 - **Portable**: Easy to backup and migrate
 - **Fast**: No DB queries needed
 
-#### 10. **Security Considerations**
+#### 11. **Security Considerations**
 
 **Implemented Measures**:
 
@@ -315,10 +411,20 @@ $metaKeywords = "keyword1, keyword2, keyword3";
 - `/css/`: Compiled styles
 - `/js/`: JavaScript files
 - `/images/`: Site images (logo, profile, etc.)
-- `/media/`: User-generated content (blog images)
+- `/media/generated/`: Generated responsive images (gitignored)
 - Root: PHP pages
 
 **Security**: Only this directory should be publicly accessible.
+
+### `/media/`
+**Purpose**: Source images for responsive image system
+
+**Structure**:
+- `/source/`: Original source images (tracked in Git)
+  - `/images/`: Profile and static images
+  - `/media/blog/`: Blog post images
+
+**Note**: Generated responsive images are stored in `/public/media/generated/` and excluded from Git.
 
 ### `/assets/`
 **Purpose**: Source files for build process
@@ -326,6 +432,13 @@ $metaKeywords = "keyword1, keyword2, keyword3";
 **Structure**:
 - `/src/input.css` - Tailwind CSS source
 - `/src/main.js` - JavaScript source (animations, interactions)
+
+### `/scripts/`
+**Purpose**: Build and utility scripts
+
+**Structure**:
+- `process-images.js` - Responsive image generation script
+- `generate-sitemap.php` - XML sitemap generator
 
 ### `/vendor/` & `/node_modules/`
 **Purpose**: Dependencies (gitignored)
@@ -341,7 +454,11 @@ $metaKeywords = "keyword1, keyword2, keyword3";
 ### 2. **Asset Optimization**
 - Minified CSS in production (`npm run build:css`)
 - Minified JavaScript in production (`npm run build:js` with Terser)
-- Lazy loading for images
+- Responsive images with modern formats (`npm run build:images`)
+  - AVIF format (~60% smaller than JPEG)
+  - WebP as fallback
+  - Multiple sizes for different viewports
+- Native lazy loading for images (`loading="lazy"`)
 - Inline SVG icons (zero external requests)
 - Inline critical CSS (could be added)
 
@@ -430,8 +547,7 @@ composer install --no-dev --optimize-autoloader
 ### What Could Be Improved
 1. **URL Structure**: Could implement clean URLs with routing
 2. **Asset Versioning**: Cache-busting for CSS/JS updates
-3. **Image Handling**: Automated optimization pipeline
-4. **Multilingual Content**: Better linking between translations
+3. **Multilingual Content**: Better linking between translations
 
 ## Conclusion
 
@@ -444,6 +560,7 @@ This project demonstrates that **modern, professional websites don't require com
 - ✅ Bilingual support
 - ✅ Git-based workflow
 - ✅ Deployment simplicity
+- ✅ Optimized responsive images
 
 The architecture is **scalable** (can add more languages, pages, features) while remaining **maintainable** (easy to understand and modify).
 
