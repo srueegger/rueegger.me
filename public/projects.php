@@ -61,7 +61,7 @@ $projects = [
             <div class="lcars-panel p-6<?= $delay ?> hover:border-[#ff9966] transition-all group">
                 <div class="flex items-start gap-4">
                     <div class="w-16 h-16 flex items-center justify-center rounded-full bg-[#0a0e27] border-2 border-[#ff9966] flex-shrink-0 group-hover:scale-110 transition-all" style="aspect-ratio: 1/1;">
-                        <div class="w-8 h-8 fill-[#ff9966]">
+                        <div class="w-8 h-8 text-[#ff9966] fill-current">
                             <?= $p['icon'] ?>
                         </div>
                     </div>
