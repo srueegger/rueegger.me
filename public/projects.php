@@ -69,7 +69,16 @@ $projects = [
 
                 <?php if (isset($p['video'])): ?>
                 <div class="mb-6 rounded overflow-hidden border-2 border-[#3a4f7a] group-hover:border-[#ff9966] transition-colors aspect-video">
-                    <video class="w-full h-full object-cover" controls preload="metadata" poster="<?= isset($p['poster']) ? '/media/generated/' . $p['poster'] . '-800w.jpeg' : '' ?>">
+                    <?php
+                    $posterUrl = '';
+                    if (isset($p['poster'])) {
+                        $pathInfo = pathinfo($p['poster']);
+                        $dir = $pathInfo['dirname'] === '.' ? '' : $pathInfo['dirname'] . '/';
+                        $basename = $pathInfo['filename'];
+                        $posterUrl = '/media/generated/' . $dir . $basename . '-800w.jpeg';
+                    }
+                    ?>
+                    <video class="w-full h-full object-cover" controls preload="metadata" poster="<?= e($posterUrl) ?>">
                         <source src="<?= e($p['video']) ?>" type="video/mp4">
                         <?= $i18n->getLang() === 'de' ? 'Dein Browser unterstützt das Video-Tag nicht.' : 'Your browser does not support the video tag.' ?>
                     </video>
