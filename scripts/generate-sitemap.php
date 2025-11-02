@@ -7,13 +7,13 @@
  */
 
 // Include necessary files
-require_once __DIR__ . '/vendor/autoload.php';
-require_once __DIR__ . '/includes/classes/I18n.php';
-require_once __DIR__ . '/includes/classes/MarkdownParser.php';
+require_once __DIR__ . '/../vendor/autoload.php';
+require_once __DIR__ . '/../includes/classes/I18n.php';
+require_once __DIR__ . '/../includes/classes/MarkdownParser.php';
 
 // Configuration
 $baseUrl = 'https://rueegger.me';  // Change this to your production URL
-$outputFile = __DIR__ . '/public/sitemap.xml';
+$outputFile = __DIR__ . '/../public/sitemap.xml';
 
 // Static pages with their priorities and change frequencies
 $staticPages = [
@@ -62,14 +62,14 @@ foreach ($staticPages as $page) {
 foreach ($languages as $lang) {
     // Create I18n instance for this language
     $_GET['lang'] = $lang;
-    $i18n = new App\I18n(__DIR__ . '/content');
+    $i18n = new App\I18n(__DIR__ . '/../content');
     $posts = $i18n->getBlogPosts();
 
     foreach ($posts as $post) {
         $postUrl = $baseUrl . '/post.php?slug=' . urlencode($post['slug']) . '&lang=' . $lang;
 
         // Get last modified date from file
-        $filePath = __DIR__ . '/content/' . $lang . '/blog/' . $post['filename'] . '.md';
+        $filePath = __DIR__ . '/../content/' . $lang . '/blog/' . $post['filename'] . '.md';
         $lastmod = file_exists($filePath) ? date('c', filemtime($filePath)) : null;
 
         $xml .= '    <url>' . PHP_EOL;
