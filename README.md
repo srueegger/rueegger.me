@@ -65,7 +65,6 @@ rueegger.me/
 ├── public/                 # Document root
 │   ├── css/                # Compiled & minified CSS
 │   ├── js/                 # Compiled & minified JavaScript
-│   ├── images/             # Static site images
 │   ├── media/
 │   │   └── generated/      # Generated responsive images (gitignored)
 │   ├── index.php           # Homepage
