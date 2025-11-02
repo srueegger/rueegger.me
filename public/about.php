@@ -8,15 +8,14 @@ use App\MarkdownParser;
 $i18n = new I18n('../content');
 $parser = new MarkdownParser();
 
-$pageTitle = $i18n->getLang() === 'de' ? 'Über mich - Samuel Rüegger' : 'About Me - Samuel Rüegger';
-$metaDescription = $i18n->getLang() === 'de'
-    ? 'Erfahre mehr über Samuel Rüegger - Web-Entwickler, AI-Experte und Tech-Kreativer. Meine Geschichte, Technologien und Philosophie.'
-    : 'Learn more about Samuel Rüegger - Web Developer, AI Expert & Tech Creative. My story, technologies, and philosophy.';
-
-// OG meta tags
-$ogImage = $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'] . '/media/generated/images/samuel-rueegger-1200w.jpeg';
-$ogUrl = $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
-$ogType = 'profile';
+// Set up page metadata
+extract(setupPageMeta([
+    'title' => $i18n->getLang() === 'de' ? 'Über mich' : 'About Me',
+    'description' => $i18n->getLang() === 'de'
+        ? 'Erfahre mehr über Samuel Rüegger - Web-Entwickler, AI-Experte und Tech-Kreativer. Meine Geschichte, Technologien und Philosophie.'
+        : 'Learn more about Samuel Rüegger - Web Developer, AI Expert & Tech Creative. My story, technologies, and philosophy.',
+    'ogType' => 'profile'
+]));
 
 include '../includes/header.php';
 

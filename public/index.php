@@ -8,18 +8,15 @@ use App\MarkdownParser;
 $i18n = new I18n('../content');
 $parser = new MarkdownParser();
 
-$pageTitle = $i18n->getLang() === 'de'
-    ? 'Samuel Rüegger - Web-Entwickler, AI-Experte & Tech-Nerd'
-    : 'Samuel Rüegger - Web Developer, AI Expert & Tech Nerd';
-
-$metaDescription = $i18n->getLang() === 'de'
-    ? 'Portfolio von Samuel Rüegger - Nerdiger Web-Entwickler, AI-Experte. Terminal-Aesthetik trifft moderne Webentwicklung.'
-    : 'Portfolio of Samuel Rüegger - Nerdy Web Developer, AI Expert. Terminal aesthetics meet modern web development.';
-
-// OG meta tags
-$ogImage = $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'] . '/media/generated/images/samuel-rueegger-1200w.jpeg';
-$ogUrl = $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
-$ogType = 'website';
+// Set up page metadata
+extract(setupPageMeta([
+    'title' => $i18n->getLang() === 'de'
+        ? 'Samuel Rüegger - Web-Entwickler, AI-Experte & Tech-Nerd'
+        : 'Samuel Rüegger - Web Developer, AI Expert & Tech Nerd',
+    'description' => $i18n->getLang() === 'de'
+        ? 'Portfolio von Samuel Rüegger - Nerdiger Web-Entwickler, AI-Experte. Terminal-Aesthetik trifft moderne Webentwicklung.'
+        : 'Portfolio of Samuel Rüegger - Nerdy Web Developer, AI Expert. Terminal aesthetics meet modern web development.'
+]));
 
 include '../includes/header.php';
 ?>

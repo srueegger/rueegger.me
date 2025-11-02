@@ -4,15 +4,14 @@ require_once '../includes/functions.php';
 use App\I18n;
 
 $i18n = new I18n('../content');
-$pageTitle = $i18n->getLang() === 'de' ? 'Projekte - Samuel Rüegger' : 'Projects - Samuel Rüegger';
-$metaDescription = $i18n->getLang() === 'de'
-    ? 'Entdecke meine Projekte: GuideOS, helfen-helfen, LinuxGuides und mehr. Open-Source-Projekte und Community-Initiativen.'
-    : 'Discover my projects: GuideOS, helfen-helfen, LinuxGuides and more. Open-source projects and community initiatives.';
 
-// OG meta tags
-$ogImage = $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'] . '/media/generated/images/samuel-rueegger-1200w.jpeg';
-$ogUrl = $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
-$ogType = 'website';
+// Set up page metadata
+extract(setupPageMeta([
+    'title' => $i18n->getLang() === 'de' ? 'Projekte' : 'Projects',
+    'description' => $i18n->getLang() === 'de'
+        ? 'Entdecke meine Projekte: GuideOS, helfen-helfen, LinuxGuides und mehr. Open-Source-Projekte und Community-Initiativen.'
+        : 'Discover my projects: GuideOS, helfen-helfen, LinuxGuides and more. Open-source projects and community initiatives.'
+]));
 
 include '../includes/header.php';
 

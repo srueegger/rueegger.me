@@ -6,15 +6,13 @@ use App\I18n;
 
 $i18n = new I18n('../content');
 
-$pageTitle = $i18n->getLang() === 'de' ? 'Kontakt - Samuel Rüegger' : 'Contact - Samuel Rüegger';
-$metaDescription = $i18n->getLang() === 'de'
-    ? 'Kontaktiere Samuel Rüegger - Web-Entwickler, AI-Experte. Erreichbar über E-Mail, Mastodon, GitHub und weitere Kanäle.'
-    : 'Contact Samuel Rüegger - Web Developer, AI Expert. Reachable via email, Mastodon, GitHub, and other channels.';
-
-// OG meta tags
-$ogImage = $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'] . '/media/generated/images/samuel-rueegger-1200w.jpeg';
-$ogUrl = $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
-$ogType = 'website';
+// Set up page metadata
+extract(setupPageMeta([
+    'title' => $i18n->getLang() === 'de' ? 'Kontakt' : 'Contact',
+    'description' => $i18n->getLang() === 'de'
+        ? 'Kontaktiere Samuel Rüegger - Web-Entwickler, AI-Experte. Erreichbar über E-Mail, Mastodon, GitHub und weitere Kanäle.'
+        : 'Contact Samuel Rüegger - Web Developer, AI Expert. Reachable via email, Mastodon, GitHub, and other channels.'
+]));
 
 include '../includes/header.php';
 ?>
