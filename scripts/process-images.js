@@ -59,10 +59,12 @@ function getSizePresets(imagePath) {
     return ['profile'];
   }
 
-  // Blog images - generate both hero and card sizes
-  // Hero is used for blog post detail pages, card for listings
+  // Blog images - generate hero, card AND thumbnail sizes
+  // Hero is used for blog post detail pages
+  // Card is used for blog cards on homepage
+  // Thumbnail is used for blog listing page
   if (imagePath.includes('/blog/')) {
-    return ['hero', 'card'];
+    return ['hero', 'card', 'thumbnail'];
   }
 
   // Default to card size
