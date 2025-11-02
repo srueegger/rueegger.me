@@ -58,11 +58,9 @@ function getSizePreset(imagePath) {
     return 'profile';
   }
 
-  // Blog images - use hero size for main images, card for others
+  // Blog images - use card size for blog listings/cards
   if (imagePath.includes('/blog/')) {
-    // Assume main post images are larger, thumbnails/screenshots are smaller
-    // You can customize this logic based on your naming convention
-    return 'hero';
+    return 'card';
   }
 
   // Default to card size
