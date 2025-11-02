@@ -62,13 +62,13 @@ $projects = [
             ?>
             <div class="lcars-panel p-8 hover:border-[#ff9966] transition-all group">
                 <?php if (isset($p['image'])): ?>
-                <div class="mb-6 rounded overflow-hidden border-2 border-[#3a4f7a] group-hover:border-[#ff9966] transition-colors">
-                    <?= responsiveImage($p['image'], e($p['title']), 'card', 'w-full h-64 object-cover') ?>
+                <div class="mb-6 rounded overflow-hidden border-2 border-[#3a4f7a] group-hover:border-[#ff9966] transition-colors aspect-video">
+                    <?= responsiveImage($p['image'], e($p['title']), 'card', 'w-full h-full object-cover') ?>
                 </div>
                 <?php endif; ?>
 
                 <?php if (isset($p['video'])): ?>
-                <div class="mb-6 rounded overflow-hidden border-2 border-[#3a4f7a] group-hover:border-[#ff9966] transition-colors h-64 relative">
+                <div class="mb-6 rounded overflow-hidden border-2 border-[#3a4f7a] group-hover:border-[#ff9966] transition-colors aspect-video">
                     <video class="w-full h-full object-cover" controls preload="metadata" poster="<?= isset($p['poster']) ? '/media/generated/' . $p['poster'] . '-800w.jpeg' : '' ?>">
                         <source src="<?= e($p['video']) ?>" type="video/mp4">
                         <?= $i18n->getLang() === 'de' ? 'Dein Browser unterstützt das Video-Tag nicht.' : 'Your browser does not support the video tag.' ?>
