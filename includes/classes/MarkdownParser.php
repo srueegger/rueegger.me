@@ -20,13 +20,18 @@ class MarkdownParser
     /**
      * Parse markdown to HTML
      */
-    public function parse(string $markdown): string
+    public function parse(string $markdown, bool $removeFirstH1 = false): string
     {
         // Remove frontmatter
         $markdown = $this->stripFrontmatter($markdown);
 
         // Parse markdown to HTML
         $html = $this->parsedown->text($markdown);
+
+        // Remove first <h1> if requested (useful for blog posts where title is shown separately)
+        if ($removeFirstH1) {
+            $html = preg_replace('/<h1[^>]*>.*?<\/h1>/i', '', $html, 1);
+        }
 
         // Convert <img> tags to responsive <picture> elements
         $html = $this->convertImagesToResponsive($html);

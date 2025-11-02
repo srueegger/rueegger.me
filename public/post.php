@@ -29,7 +29,7 @@ if (!$content) {
 
 // Extract metadata
 $meta = $i18n->extractMetadata($content);
-$html = $parser->parse($content);
+$html = $parser->parse($content, true); // Remove first H1 (already shown in header)
 
 $pageTitle = ($meta['title'] ?? 'Blog Post') . ' - Samuel Rüegger';
 $metaDescription = $meta['excerpt'] ?? '';
