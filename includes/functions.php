@@ -162,7 +162,7 @@ function responsiveImage(string $imagePath, string $alt, string $preset = 'card'
     $html .= '<source srcset="' . implode(', ', $avifSrcset) . '" sizes="' . e($sizes) . '" type="image/avif">';
     $html .= '<source srcset="' . implode(', ', $webpSrcset) . '" sizes="' . e($sizes) . '" type="image/webp">';
     $html .= '<source srcset="' . implode(', ', $jpegSrcset) . '" sizes="' . e($sizes) . '" type="image/jpeg">';
-    $html .= '<img src="' . e($fallbackSrc) . '" alt="' . e($alt) . '" class="' . e($classes) . '" loading="lazy">';
+    $html .= '<img src="' . e($fallbackSrc) . '" alt="' . e($alt) . '" class="' . e($classes) . '" style="aspect-ratio: 16/9;" loading="lazy">';
     $html .= '</picture>';
 
     return $html;
