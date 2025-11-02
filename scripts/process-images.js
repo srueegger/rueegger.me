@@ -91,6 +91,10 @@ async function processImage(sourcePath, outputBasePath, sizes) {
   const image = sharp(sourcePath);
   const metadata = await image.metadata();
 
+  // Track if any files were generated for this image
+  let generatedCount = 0;
+  let skippedCount = 0;
+
   // Process each size
   for (const width of sizes) {
     // Skip if source image is smaller than target width
@@ -102,6 +106,15 @@ async function processImage(sourcePath, outputBasePath, sizes) {
     // Process each format
     for (const format of config.formats) {
       const outputPath = path.join(outputDir, `${basename}-${width}w.${format}`);
+
+      // Check if file already exists
+      if (fs.existsSync(outputPath)) {
+        const stats = fs.statSync(outputPath);
+        const sizeKB = (stats.size / 1024).toFixed(1);
+        console.log(`  ⊙ ${width}w ${format.toUpperCase()}: ${sizeKB} KB (already exists, skipping)`);
+        skippedCount++;
+        continue;
+      }
 
       try {
         await sharp(sourcePath)
@@ -115,10 +128,18 @@ async function processImage(sourcePath, outputBasePath, sizes) {
         const stats = fs.statSync(outputPath);
         const sizeKB = (stats.size / 1024).toFixed(1);
         console.log(`  ✓ ${width}w ${format.toUpperCase()}: ${sizeKB} KB`);
+        generatedCount++;
       } catch (error) {
         console.error(`  ✗ Error creating ${width}w ${format}:`, error.message);
       }
     }
+  }
+
+  // Summary for this image
+  if (generatedCount > 0 && skippedCount > 0) {
+    console.log(`  Summary: ${generatedCount} generated, ${skippedCount} skipped`);
+  } else if (skippedCount > 0 && generatedCount === 0) {
+    console.log(`  Summary: All files already exist, nothing to generate`);
   }
 
   console.log('');
