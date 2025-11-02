@@ -81,7 +81,6 @@ rueegger.me/
 ├── .gitignore
 ├── composer.json
 ├── package.json
-├── tailwind.config.js
 ├── README.md
 ├── CLAUDE.md
 └── LICENSE

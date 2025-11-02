@@ -159,21 +159,23 @@ npm run build
 - **Tool**: Terser (compress + mangle) in production
 - **Development**: Simple file copy for debugging
 
-**Configuration**: `tailwind.config.js`
-- Content paths for class detection
-- Custom theme extensions
-- Dark mode configuration
-- Plugin configuration (typography)
+**Configuration**: Tailwind CSS v4 uses CSS-first configuration
+- No `tailwind.config.js` file needed
+- Configuration via `@import "tailwindcss"` and `@plugin` directives in CSS
+- Plugins loaded with `@plugin "@tailwindcss/typography"`
+- Self-hosted fonts via Fontsource packages
 
 **NPM Scripts**:
 ```json
 {
   "dev": "npm run dev:css & npm run dev:js",
-  "dev:css": "npx tailwindcss -i ./assets/src/input.css -o ./public/css/style.css --watch",
+  "dev:css": "npx @tailwindcss/cli -i ./assets/src/input.css -o ./public/css/style.css --watch",
   "dev:js": "cp ./assets/src/main.js ./public/js/main.js",
-  "build": "npm run build:css && npm run build:js",
-  "build:css": "npx tailwindcss -i ./assets/src/input.css -o ./public/css/style.css --minify",
-  "build:js": "npx terser ./assets/src/main.js -o ./public/js/main.js --compress --mangle"
+  "build": "npm run build:css && npm run build:js && npm run build:images && npm run build:sitemap",
+  "build:css": "npx @tailwindcss/cli -i ./assets/src/input.css -o ./public/css/style.css --minify",
+  "build:js": "npx terser ./assets/src/main.js -o ./public/js/main.js --compress --mangle",
+  "build:images": "node scripts/process-images.js",
+  "build:sitemap": "php scripts/generate-sitemap.php"
 }
 ```
 
@@ -566,9 +568,16 @@ The architecture is **scalable** (can add more languages, pages, features) while
 
 ---
 
-**Last Updated**: 2025-10-31
+**Last Updated**: 2025-11-02
 **Claude**: Assisted in architecture design and implementation
 **Author**: Samuel Rüegger
+
+**Recent Updates**:
+- Migrated to Tailwind CSS v4 (CSS-first configuration)
+- Self-hosted fonts via Fontsource (no Google Fonts CDN)
+- Optimized build scripts (skip existing images, fixed sitemap paths)
+- Added responsive image system with AVIF/WebP/JPEG support
+- Enhanced projects page with local media hosting
 
 ## Icon Implementation
 
