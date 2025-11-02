@@ -194,7 +194,9 @@ include '../includes/header.php';
                 </div>
 
                 <h3 class="text-lg font-bold text-[#ff9966] mb-2 uppercase">
-                    <?= e($post['title']) ?>
+                    <a href="<?= url('post.php?slug=' . $post['slug']) ?>" class="hover:text-[#ffb000]">
+                        <?= e($post['title']) ?>
+                    </a>
                 </h3>
                 
                 <p class="text-[#a0b0d0] text-sm mb-4"><?= e(truncate($post['excerpt'], 100)) ?></p>

@@ -343,6 +343,11 @@
     animation: pulse-glow 2s infinite;
   }
 
+  /* Project media 16:9 aspect ratio */
+  .project-media {
+    aspect-ratio: 16 / 9;
+  }
+
   /* Principle card animations removed - caused visibility issues */
 }
 
