@@ -29,14 +29,14 @@ if (!$content) {
 
 // Extract metadata
 $meta = $i18n->extractMetadata($content);
-$html = $parser->parse($content);
+$html = $parser->parse($content, true); // Remove first H1 (already shown in header)
 
 $pageTitle = ($meta['title'] ?? 'Blog Post') . ' - Samuel Rüegger';
 $metaDescription = $meta['excerpt'] ?? '';
 $metaKeywords = isset($meta['tags']) && is_array($meta['tags']) ? implode(', ', $meta['tags']) : '';
 
 // OG and Twitter meta tags
-$ogImage = isset($meta['image']) && $meta['image'] ? $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'] . $meta['image'] : $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'] . '/images/samuel-rueegger.jpg';
+$ogImage = isset($meta['image']) && $meta['image'] ? $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'] . $meta['image'] : $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'] . '/media/generated/images/samuel-rueegger-1200w.jpeg';
 $ogUrl = $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
 $ogType = 'article';
 $articlePublishedTime = isset($meta['date']) ? date('c', strtotime($meta['date'])) : '';
@@ -70,9 +70,9 @@ include '../includes/header.php';
         <!-- Article Header in LCARS Panel -->
         <header class="lcars-panel p-8 mb-8">
             <?php if (isset($meta['image']) && $meta['image']): ?>
-            <img src="<?= e($meta['image']) ?>" alt="<?= e($meta['title'] ?? '') ?>"
-                 class="w-full h-96 object-cover rounded border-4 border-[#ff9966] mb-6"
-                 style="box-shadow: 0 0 30px rgba(255, 153, 102, 0.5);">
+            <div class="mb-6" style="box-shadow: 0 0 30px rgba(255, 153, 102, 0.5);">
+                <?= responsiveImage(ltrim($meta['image'], '/'), e($meta['title'] ?? ''), 'hero', 'w-full h-96 object-cover rounded border-4 border-[#ff9966]') ?>
+            </div>
             <?php endif; ?>
 
             <div class="flex flex-wrap gap-2 mb-4">

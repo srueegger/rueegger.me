@@ -12,7 +12,7 @@ $metaDescription = $i18n->getLang() === 'de'
     : 'Contact Samuel Rüegger - Web Developer, AI Expert. Reachable via email, Mastodon, GitHub, and other channels.';
 
 // OG meta tags
-$ogImage = $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'] . '/images/samuel-rueegger.jpg';
+$ogImage = $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'] . '/media/generated/images/samuel-rueegger-1200w.jpeg';
 $ogUrl = $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
 $ogType = 'website';
 

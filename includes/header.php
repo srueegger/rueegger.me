@@ -12,7 +12,7 @@
     <meta property="og:url" content="<?= isset($ogUrl) ? e($ogUrl) : e($_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']) ?>">
     <meta property="og:title" content="<?= e($pageTitle ?? 'Samuel Rüegger - Web Developer & AI Expert') ?>">
     <meta property="og:description" content="<?= e($metaDescription ?? ($i18n->getLang() === 'de' ? 'Web-Entwickler, AI-Experte und Tech-Kreativer' : 'Web Developer, AI Expert & Tech Creative')) ?>">
-    <meta property="og:image" content="<?= isset($ogImage) ? e($ogImage) : e($_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'] . asset('images/samuel-rueegger.jpg')) ?>">
+    <meta property="og:image" content="<?= isset($ogImage) ? e($ogImage) : e($_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'] . '/media/generated/images/samuel-rueegger-1200w.jpeg') ?>">
     <meta property="og:locale" content="<?= $i18n->getLang() === 'de' ? 'de_CH' : 'en_US' ?>">
     <meta property="og:site_name" content="Samuel Rüegger">
 
@@ -36,7 +36,7 @@
     <meta name="twitter:creator" content="@srueegger">
     <meta name="twitter:title" content="<?= e($pageTitle ?? 'Samuel Rüegger - Web Developer & AI Expert') ?>">
     <meta name="twitter:description" content="<?= e($metaDescription ?? ($i18n->getLang() === 'de' ? 'Web-Entwickler, AI-Experte und Tech-Kreativer' : 'Web Developer, AI Expert & Tech Creative')) ?>">
-    <meta name="twitter:image" content="<?= isset($ogImage) ? e($ogImage) : e($_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'] . asset('images/samuel-rueegger.jpg')) ?>">
+    <meta name="twitter:image" content="<?= isset($ogImage) ? e($ogImage) : e($_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'] . '/media/generated/images/samuel-rueegger-1200w.jpeg') ?>">
 
     <!-- Favicon -->
     <link rel="icon" type="image/svg+xml" href="<?= asset('favicon.svg') ?>">

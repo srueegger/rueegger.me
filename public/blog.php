@@ -8,7 +8,7 @@ $pageTitle = 'Blog - Samuel Rüegger';
 $metaDescription = $i18n->getLang() === 'de' ? 'Tech-Blog über Webentwicklung, AI, Linux' : 'Tech blog about web development, AI, Linux';
 
 // OG meta tags
-$ogImage = $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'] . '/images/samuel-rueegger.jpg';
+$ogImage = $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'] . '/media/generated/images/samuel-rueegger-1200w.jpeg';
 $ogUrl = $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
 $ogType = 'website';
 
@@ -44,8 +44,7 @@ $posts = $i18n->getBlogPosts();
                 <div class="flex flex-col md:flex-row gap-6">
                     <?php if ($post['image']): ?>
                     <div class="md:w-48 flex-shrink-0">
-                        <img src="<?= e($post['image']) ?>" alt="<?= e($post['title']) ?>" 
-                             class="w-full h-32 object-cover rounded border-2 border-[#3a4f7a]">
+                        <?= responsiveImage(ltrim($post['image'], '/'), e($post['title']), 'thumbnail', 'w-full h-32 object-cover rounded border-2 border-[#3a4f7a]') ?>
                     </div>
                     <?php endif; ?>
                     <div class="flex-1">

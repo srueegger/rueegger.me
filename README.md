@@ -12,6 +12,7 @@ Modern personal portfolio website for Samuel Rüegger - Web Developer, AI Expert
 - **SEO Optimized**: Proper meta tags, Open Graph, and semantic HTML
 - **Performance**: Lightweight, fast loading, minimal dependencies
 - **Blog System**: Markdown-based blog with frontmatter metadata
+- **Responsive Images**: Modern image optimization with AVIF, WebP, and JPEG formats
 
 ## Tech Stack
 
@@ -29,7 +30,8 @@ Modern personal portfolio website for Samuel Rüegger - Web Developer, AI Expert
 
 ### Development
 - **DDEV**: Local development environment
-- **Node.js & npm**: Build tools for Tailwind CSS
+- **Node.js & npm**: Build tools for Tailwind CSS and image processing
+- **Sharp**: High-performance image processing library
 - **Git**: Version control
 
 ## Project Structure
@@ -56,17 +58,24 @@ rueegger.me/
 │   ├── footer.php          # Global footer
 │   ├── navigation.php      # Navigation component
 │   └── functions.php       # Helper functions
+├── media/
+│   └── source/             # Source images (tracked in Git)
+│       ├── images/         # Profile and static images
+│       └── media/blog/     # Blog post images
 ├── public/                 # Document root
 │   ├── css/                # Compiled & minified CSS
 │   ├── js/                 # Compiled & minified JavaScript
-│   ├── images/             # Images
-│   ├── media/              # Blog media
+│   ├── media/
+│   │   └── generated/      # Generated responsive images (gitignored)
 │   ├── index.php           # Homepage
 │   ├── about.php           # About page
 │   ├── projects.php        # Projects page
 │   ├── blog.php            # Blog listing
 │   ├── post.php            # Blog post detail
 │   └── contact.php         # Contact page
+├── scripts/                # Build scripts
+│   ├── process-images.js   # Responsive image generation
+│   └── generate-sitemap.php # Sitemap generator
 ├── vendor/                 # Composer dependencies (gitignored)
 ├── node_modules/           # npm dependencies (gitignored)
 ├── .gitignore
@@ -106,10 +115,20 @@ rueegger.me/
    npm install
    ```
 
-4. **Build CSS & JavaScript**
+4. **Add source images**
+   - Place your original images in `media/source/`
+   - Organize blog images in `media/source/images/blog/` or `media/source/media/blog/`
+
+5. **Build CSS, JavaScript & Images**
    ```bash
    npm run build
    ```
+
+   This will:
+   - Compile and minify CSS
+   - Compile and minify JavaScript
+   - Generate responsive images (AVIF, WebP, JPEG)
+   - Generate sitemap
 
 ### Local Development with DDEV
 
@@ -148,24 +167,32 @@ rueegger.me/
 
 ### Adding a Blog Post
 
-1. Create a new Markdown file in `content/de/blog/` (for German) or `content/en/blog/` (for English)
+1. **Add images** (if your post has images)
+   - Place original images in `media/source/images/blog/` or `media/source/media/blog/`
+   - Run `npm run build:images` to generate responsive versions
 
-2. Use this frontmatter format:
+2. **Create Markdown file** in `content/de/blog/` (for German) or `content/en/blog/` (for English)
+
+3. Use this frontmatter format:
    ```markdown
    ---
    title: "Your Post Title"
    date: "2024-10-27"
    excerpt: "A brief description of your post"
    tags: ["Tag1", "Tag2", "Tag3"]
-   image: "/media/blog/your-image.jpg"
+   image: "/images/blog/your-image.jpg"
    ---
 
    # Your Post Title
 
    Your content here...
+
+   ![Alt text](/images/blog/inline-image.jpg)
    ```
 
-3. Name the file with format: `YYYY-MM-DD-slug.md`
+4. Name the file with format: `YYYY-MM-DD-slug.md`
+
+**Note**: Images in Markdown are automatically converted to responsive `<picture>` elements with AVIF, WebP, and JPEG formats.
 
 ### Editing Static Pages
 
@@ -182,13 +209,16 @@ npm run build
 This generates:
 - Minified CSS in `public/css/style.css`
 - Minified JavaScript in `public/js/main.js`
+- Responsive images in `public/media/generated/` (AVIF, WebP, JPEG)
+- Sitemap at `public/sitemap.xml`
 
 ### Deploy to Server
 
-1. Upload all files to your web server
+1. Upload all files to your web server (including `media/source/` for future rebuilds)
 2. Point your document root to the `public/` directory
 3. Ensure PHP 8.3+ is available
 4. Make sure `vendor/` directory is uploaded (or run `composer install --no-dev` on server)
+5. Ensure generated images in `public/media/generated/` are uploaded
 
 ### .htaccess (for Apache)
 
@@ -225,9 +255,54 @@ If using Apache, create a `.htaccess` file in `public/`:
 - `npm run dev`: Watch mode for development (rebuilds CSS & JS on changes)
 - `npm run dev:css`: Watch mode for CSS only
 - `npm run dev:js`: Copy JS for development
-- `npm run build`: Production build (minified CSS & JS)
+- `npm run build`: Production build (minified CSS, JS, images & sitemap)
 - `npm run build:css`: Build CSS only
 - `npm run build:js`: Build and minify JS only
+- `npm run build:images`: Process and optimize all images
+- `npm run build:sitemap`: Generate XML sitemap
+
+## Responsive Image System
+
+This project uses a build-time image processing system to generate optimized responsive images.
+
+### How It Works
+
+1. **Source Images**: Place original, high-quality images in `media/source/`
+2. **Build Script**: Run `npm run build:images` to process all images
+3. **Generated Output**: Optimized images are created in `public/media/generated/`
+
+### Image Formats
+
+For each source image, the system generates:
+- **AVIF**: Modern format with best compression (~60% smaller than JPEG)
+- **WebP**: Good fallback with wide browser support
+- **JPEG**: Legacy fallback for older browsers
+
+### Size Presets
+
+Images are generated in multiple sizes based on usage:
+- **Hero** (480, 768, 1024, 1536px): Blog post hero images
+- **Thumbnail** (200, 400, 600px): Blog listing thumbnails
+- **Card** (400, 600, 800, 1200px): Blog cards on homepage
+- **Profile** (400, 600, 800, 1200px): Profile and general images
+
+### Usage in Templates
+
+PHP helper function:
+```php
+<?= responsiveImage('images/example.jpg', 'Alt text', 'card', 'w-full') ?>
+```
+
+Markdown (auto-converted):
+```markdown
+![Alt text](/images/example.jpg)
+```
+
+### Quality Settings
+
+- **AVIF**: 82% (optimal for modern format)
+- **WebP**: 88% (balanced quality/size)
+- **JPEG**: 85% (standard quality)
 
 ## Browser Support
 
@@ -235,6 +310,7 @@ If using Apache, create a `.htaccess` file in `public/`:
 - Firefox (latest 2 versions)
 - Safari (latest 2 versions)
 - Mobile browsers (iOS Safari, Chrome Mobile)
+- **Image Formats**: AVIF (modern browsers), WebP (fallback), JPEG (all browsers)
 
 ## License
 

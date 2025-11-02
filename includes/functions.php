@@ -88,3 +88,82 @@ function asset(string $path): string
 
     return $url;
 }
+
+/**
+ * Generate responsive image HTML with <picture> element
+ *
+ * @param string $imagePath Path to the source image (relative to /media/source/)
+ * @param string $alt Alt text for the image
+ * @param string $preset Size preset: 'hero', 'thumbnail', 'card', 'profile'
+ * @param string $classes Additional CSS classes for the <img> tag
+ * @param string $sizes Sizes attribute for responsive images (optional)
+ * @return string HTML for <picture> element with multiple sources
+ */
+function responsiveImage(string $imagePath, string $alt, string $preset = 'card', string $classes = '', string $sizes = ''): string
+{
+    // Size presets matching scripts/process-images.js
+    $sizePresets = [
+        'hero' => [480, 768, 1024, 1536],
+        'thumbnail' => [200, 400, 600],
+        'card' => [400, 600, 800, 1200],
+        'profile' => [400, 600, 800, 1200]
+    ];
+
+    // Default sizes attribute if not provided
+    $defaultSizes = [
+        'hero' => '(max-width: 896px) 100vw, 896px',
+        'thumbnail' => '(max-width: 768px) 100vw, 192px',
+        'card' => '(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 400px',
+        'profile' => '(max-width: 768px) 100vw, (max-width: 1200px) 50vw, 600px'
+    ];
+
+    if (empty($sizes)) {
+        $sizes = $defaultSizes[$preset] ?? $defaultSizes['card'];
+    }
+
+    $widths = $sizePresets[$preset] ?? $sizePresets['card'];
+
+    // Extract path info
+    $pathInfo = pathinfo($imagePath);
+    $dir = $pathInfo['dirname'] === '.' ? '' : $pathInfo['dirname'] . '/';
+    $basename = $pathInfo['filename'];
+
+    // Base path for generated images
+    $basePath = '/media/generated/' . $dir . $basename;
+
+    // Build srcset for each format (only include sizes that exist)
+    $avifSrcset = [];
+    $webpSrcset = [];
+    $jpegSrcset = [];
+    $availableWidths = [];
+
+    foreach ($widths as $width) {
+        $jpegPath = $_SERVER['DOCUMENT_ROOT'] . $basePath . '-' . $width . 'w.jpeg';
+
+        // Only add this width if the JPEG file exists
+        if (file_exists($jpegPath)) {
+            $availableWidths[] = $width;
+            $avifSrcset[] = $basePath . '-' . $width . 'w.avif ' . $width . 'w';
+            $webpSrcset[] = $basePath . '-' . $width . 'w.webp ' . $width . 'w';
+            $jpegSrcset[] = $basePath . '-' . $width . 'w.jpeg ' . $width . 'w';
+        }
+    }
+
+    // If no images were generated, return empty string
+    if (empty($availableWidths)) {
+        return '';
+    }
+
+    // Fallback image (smallest available JPEG)
+    $fallbackSrc = $basePath . '-' . $availableWidths[0] . 'w.jpeg';
+
+    // Build HTML
+    $html = '<picture>';
+    $html .= '<source srcset="' . implode(', ', $avifSrcset) . '" sizes="' . e($sizes) . '" type="image/avif">';
+    $html .= '<source srcset="' . implode(', ', $webpSrcset) . '" sizes="' . e($sizes) . '" type="image/webp">';
+    $html .= '<source srcset="' . implode(', ', $jpegSrcset) . '" sizes="' . e($sizes) . '" type="image/jpeg">';
+    $html .= '<img src="' . e($fallbackSrc) . '" alt="' . e($alt) . '" class="' . e($classes) . '" loading="lazy">';
+    $html .= '</picture>';
+
+    return $html;
+}
