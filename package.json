@@ -10,7 +10,7 @@
     "build:css": "npx tailwindcss -i ./assets/src/input.css -o ./public/css/style.css --minify",
     "build:js": "npx terser ./assets/src/main.js -o ./public/js/main.js --compress --mangle",
     "build:images": "node scripts/process-images.js",
-    "build:sitemap": "php generate-sitemap.php"
+    "build:sitemap": "php scripts/generate-sitemap.php"
   },
   "keywords": [
     "portfolio",
