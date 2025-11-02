@@ -8,15 +8,13 @@ use App\MarkdownParser;
 $i18n = new I18n('../content');
 $parser = new MarkdownParser();
 
-$pageTitle = $i18n->getLang() === 'de' ? 'Impressum - Samuel Rüegger' : 'Imprint - Samuel Rüegger';
-$metaDescription = $i18n->getLang() === 'de'
-    ? 'Impressum und rechtliche Angaben von rueegger.me'
-    : 'Imprint and legal information of rueegger.me';
-
-// OG meta tags
-$ogImage = $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'] . '/media/generated/images/samuel-rueegger-1200w.jpeg';
-$ogUrl = $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
-$ogType = 'website';
+// Set up page metadata
+extract(setupPageMeta([
+    'title' => $i18n->getLang() === 'de' ? 'Impressum' : 'Imprint',
+    'description' => $i18n->getLang() === 'de'
+        ? 'Impressum und rechtliche Angaben von rueegger.me'
+        : 'Imprint and legal information of rueegger.me'
+]));
 
 include '../includes/header.php';
 

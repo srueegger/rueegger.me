@@ -167,3 +167,44 @@ function responsiveImage(string $imagePath, string $alt, string $preset = 'card'
 
     return $html;
 }
+
+/**
+ * Set up page metadata (title, description, OG tags)
+ * Reduces boilerplate in page files
+ *
+ * @param array $config Configuration array with keys:
+ *   - title: Page title (will append ' - Samuel Rüegger' automatically)
+ *   - description: Meta description
+ *   - ogType: OpenGraph type (default: 'website')
+ *   - ogImage: OpenGraph image path (default: profile image)
+ * @return array Associative array with all meta variables set
+ */
+function setupPageMeta(array $config): array
+{
+    // Default values
+    $defaults = [
+        'title' => 'Samuel Rüegger - Web Developer, AI Expert & Tech Creative',
+        'description' => '',
+        'ogType' => 'website',
+        'ogImage' => $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'] . '/media/generated/images/samuel-rueegger-1200w.jpeg',
+        'ogUrl' => $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI']
+    ];
+
+    // Merge with provided config
+    $meta = array_merge($defaults, $config);
+
+    // Auto-append site name to title if not already present
+    if (!str_contains($meta['title'], 'Samuel Rüegger')) {
+        $meta['title'] .= ' - Samuel Rüegger';
+    }
+
+    // Return variables that can be extracted in page files
+    return [
+        'pageTitle' => $meta['title'],
+        'metaDescription' => $meta['description'],
+        'metaKeywords' => $meta['keywords'] ?? '',
+        'ogImage' => $meta['ogImage'],
+        'ogUrl' => $meta['ogUrl'],
+        'ogType' => $meta['ogType']
+    ];
+}
