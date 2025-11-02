@@ -131,19 +131,31 @@ function responsiveImage(string $imagePath, string $alt, string $preset = 'card'
     // Base path for generated images
     $basePath = '/media/generated/' . $dir . $basename;
 
-    // Build srcset for each format
+    // Build srcset for each format (only include sizes that exist)
     $avifSrcset = [];
     $webpSrcset = [];
     $jpegSrcset = [];
+    $availableWidths = [];
 
     foreach ($widths as $width) {
-        $avifSrcset[] = $basePath . '-' . $width . 'w.avif ' . $width . 'w';
-        $webpSrcset[] = $basePath . '-' . $width . 'w.webp ' . $width . 'w';
-        $jpegSrcset[] = $basePath . '-' . $width . 'w.jpeg ' . $width . 'w';
+        $jpegPath = $_SERVER['DOCUMENT_ROOT'] . $basePath . '-' . $width . 'w.jpeg';
+
+        // Only add this width if the JPEG file exists
+        if (file_exists($jpegPath)) {
+            $availableWidths[] = $width;
+            $avifSrcset[] = $basePath . '-' . $width . 'w.avif ' . $width . 'w';
+            $webpSrcset[] = $basePath . '-' . $width . 'w.webp ' . $width . 'w';
+            $jpegSrcset[] = $basePath . '-' . $width . 'w.jpeg ' . $width . 'w';
+        }
     }
 
-    // Fallback image (smallest JPEG)
-    $fallbackSrc = $basePath . '-' . $widths[0] . 'w.jpeg';
+    // If no images were generated, return empty string
+    if (empty($availableWidths)) {
+        return '';
+    }
+
+    // Fallback image (smallest available JPEG)
+    $fallbackSrc = $basePath . '-' . $availableWidths[0] . 'w.jpeg';
 
     // Build HTML
     $html = '<picture>';
