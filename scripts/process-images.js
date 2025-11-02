@@ -48,23 +48,25 @@ const config = {
 };
 
 /**
- * Get the size preset for an image based on its path
+ * Get the size presets for an image based on its path
+ * Returns an array of presets to generate
  */
-function getSizePreset(imagePath) {
+function getSizePresets(imagePath) {
   const filename = path.basename(imagePath).toLowerCase();
 
   // Profile image
   if (filename.includes('samuel-rueegger')) {
-    return 'profile';
+    return ['profile'];
   }
 
-  // Blog images - use card size for blog listings/cards
+  // Blog images - generate both hero and card sizes
+  // Hero is used for blog post detail pages, card for listings
   if (imagePath.includes('/blog/')) {
-    return 'card';
+    return ['hero', 'card'];
   }
 
   // Default to card size
-  return 'card';
+  return ['card'];
 }
 
 /**
@@ -149,9 +151,14 @@ async function processAllImages() {
 
   for (const imagePath of images) {
     try {
-      const preset = getSizePreset(imagePath);
-      const sizes = config.sizes[preset];
-      await processImage(imagePath, config.outputDir, sizes);
+      const presets = getSizePresets(imagePath);
+
+      // Process each preset for this image
+      for (const preset of presets) {
+        const sizes = config.sizes[preset];
+        await processImage(imagePath, config.outputDir, sizes);
+      }
+
       processedCount++;
     } catch (error) {
       console.error(`✗ Failed to process ${imagePath}:`, error.message);
