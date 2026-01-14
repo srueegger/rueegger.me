@@ -22,11 +22,11 @@
   "devDependencies": {
     "@fontsource/inter": "^5.2.8",
     "@fontsource/jetbrains-mono": "^5.2.8",
-    "@tailwindcss/cli": "^4.1.16",
+    "@tailwindcss/cli": "^4.1.18",
     "@tailwindcss/typography": "^0.5.19",
-    "glob": "^11.0.3",
-    "sharp": "^0.34.4",
-    "tailwindcss": "^4.1.16",
-    "terser": "^5.44.0"
+    "glob": "^13.0.0",
+    "sharp": "^0.34.5",
+    "tailwindcss": "^4.1.18",
+    "terser": "^5.44.1"
   }
 }
