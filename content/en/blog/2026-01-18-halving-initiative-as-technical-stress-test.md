@@ -44,7 +44,11 @@ This shows a central tension: digital formats exist, but they often still run on
 
 Especially with podcasts and digital content, metadata is crucial. Titles, descriptions, topic assignments, timestamps, and keywords determine discoverability, archive value, and reusability.
 
-In many historically grown systems, metadata is maintained more as an afterthought. This hinders automation, personalization, and data-based playout. Technically, a clean metadata strategy would be relatively easy to implement; organizationally, however, it's demanding.
+A concrete example: An interview with an expert on the energy transition could appear as a standalone piece, as a clip in a news broadcast, as an audio segment in a podcast, as a quote in an explainer video, and as a transcript in an online dossier. The prerequisite is that the raw material is tagged with clean metadata from the start – who is speaking, about what, in which context, with which rights.
+
+In many historically grown systems, however, metadata is maintained more as an afterthought, often manually and incompletely. This hinders not only automation and personalization, but also data-based playout across different platforms. Content that has been produced once gets stuck in silos because it simply isn't discoverable or correctly classified.
+
+Technically, a clean metadata strategy would be relatively easy to implement – modern content management systems and AI-powered tagging tools make this possible today. Organizationally, however, it's demanding because it means thinking about workflows differently from the start: metadata not as a tedious obligation at the end, but as an integral part of the production process.
 
 ## Social Media and Platform Logic
 

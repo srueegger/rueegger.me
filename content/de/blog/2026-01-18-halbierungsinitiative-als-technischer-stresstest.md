@@ -44,7 +44,11 @@ Das zeigt ein zentrales Spannungsfeld: Digitale Formate existieren, aber sie lau
 
 Gerade bei Podcasts und digitalen Beiträgen sind Metadaten entscheidend. Titel, Beschreibungen, Themenzuordnung, Zeitmarken und Schlagwörter bestimmen Auffindbarkeit, Archivwert und Wiederverwendbarkeit.
 
-In vielen historisch gewachsenen Systemen werden Metadaten eher nachgelagert gepflegt. Das erschwert Automatisierung, Personalisierung und datenbasierte Ausspielung. Technisch wäre eine saubere Metadaten-Strategie relativ einfach umzusetzen, organisatorisch jedoch anspruchsvoll.
+Ein konkretes Beispiel: Ein Interview mit einer Expertin zum Thema Energiewende könnte als eigenständiger Beitrag erscheinen, als Ausschnitt in einer Nachrichtensendung, als Audioclip in einem Podcast, als Zitat in einem Erklärvideo und als Transkript in einem Online-Dossier. Voraussetzung dafür ist, dass das Rohmaterial von Anfang an mit sauberen Metadaten versehen wird – wer spricht, worüber, in welchem Kontext, mit welchen Rechten.
+
+In vielen historisch gewachsenen Systemen werden Metadaten jedoch eher nachgelagert gepflegt, oft manuell und unvollständig. Das erschwert nicht nur Automatisierung und Personalisierung, sondern auch die datenbasierte Ausspielung auf unterschiedlichen Plattformen. Inhalte, die einmal produziert wurden, bleiben in Silos stecken, weil sie schlicht nicht auffindbar oder nicht korrekt klassifiziert sind.
+
+Technisch wäre eine saubere Metadaten-Strategie relativ einfach umzusetzen – moderne Content-Management-Systeme und KI-gestützte Tagging-Tools machen das heute möglich. Organisatorisch ist es jedoch anspruchsvoll, weil es bedeutet, Workflows von Anfang an anders zu denken: Metadaten nicht als lästige Pflicht am Ende, sondern als integraler Bestandteil des Produktionsprozesses.
 
 ## Social Media und die Logik der Plattformen
 
