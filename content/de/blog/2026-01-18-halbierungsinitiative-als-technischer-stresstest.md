@@ -54,9 +54,13 @@ Technisch wäre eine saubere Metadaten-Strategie relativ einfach umzusetzen – 
 
 Besonders sichtbar wird der Bruch zwischen Technik und Organisation bei Social-Media-Kanälen. Ein Beispiel ist **SRF Impact** auf TikTok. Die Inhalte sind kurz, schnell konsumierbar und auf algorithmische Sichtbarkeit optimiert. Teilweise erreichen sie sehr hohe Reichweiten.
 
-Technisch funktionieren solche Kanäle fundamental anders als klassisches Fernsehen. Aktualität schlägt Perfektion, Produktionszyklen sind extrem kurz, Reaktionen erfolgen in Echtzeit. Gleichzeitig sind diese Kanäle oft an klassische Redaktionen angebunden.
+Technisch funktionieren solche Kanäle fundamental anders als klassisches Fernsehen. Ein TikTok-Video muss in den ersten zwei Sekunden überzeugen, sonst wird weitergewischt. Der Algorithmus belohnt Reaktionen, nicht Sendezeiten. Was funktioniert, zeigt sich in Echtzeit, und was nicht funktioniert, verschwindet im Rauschen.
 
-Das führt zu Spannungen. Freigabeprozesse, Verantwortlichkeiten und Qualitätskontrollen stammen aus einer Welt, die nicht für Sekunden-Content gebaut wurde. Die Technik ist modern, die Struktur oft nicht.
+Für klassische Redaktionen ist das eine Umstellung. Im Fernsehen wird ein Beitrag einmal gesendet, danach ist er durch. Auf Social Media lebt ein Thema weiter: es wird kommentiert, geteilt, kritisiert, manchmal tagelang. Das erfordert nicht nur andere Inhalte, sondern auch andere Reaktionszeiten. Wer auf einen viralen Moment erst am nächsten Tag reagiert, hat ihn verpasst.
+
+Gleichzeitig sind diese Kanäle oft an klassische Redaktionen angebunden. Das führt zu Spannungen. Freigabeprozesse, Verantwortlichkeiten und Qualitätskontrollen stammen aus einer Welt, die nicht für Sekunden-Content gebaut wurde. Wenn ein TikTok-Video vor der Veröffentlichung drei Hierarchiestufen durchlaufen muss, ist der Moment vorbei.
+
+Die Technik ist modern, die Struktur oft nicht. Das bedeutet nicht, dass Qualitätskontrolle überflüssig wäre, aber sie muss anders funktionieren. Weniger Vorab-Freigabe, mehr Vertrauen in die Teams, klarere Leitplanken statt Einzelfallentscheidungen.
 
 ## Legacy-Systeme und technische Schulden
 
@@ -70,11 +74,17 @@ Ein massiver Budgetdruck würde diese Schwächen sichtbar machen, nicht weil Tec
 
 Automatisierte Transkription, Untertitelung, Übersetzung, Inhaltsklassifikation oder Archivierung sind technisch längst möglich. Die grösste Hürde liegt nicht in der Technologie, sondern in der Akzeptanz.
 
-Automatisierung verändert Rollenbilder und Entscheidungsprozesse. In öffentlich finanzierten Organisationen ist diese Veränderung besonders sensibel. Gleichzeitig würde ein reduziertes Budget Automatisierung faktisch zur Voraussetzung machen.
+Ein Beispiel: Automatische Untertitelung ist heute so ausgereift, dass sie in Echtzeit funktioniert. Für eine 30-minütige Sendung spart das mehrere Stunden manueller Arbeit. Ähnliches gilt für Transkripte, die früher aufwendig erstellt wurden und heute per Spracherkennung in Minuten vorliegen. Trotzdem werden viele dieser Aufgaben noch von Hand erledigt, nicht weil die Technik versagt, sondern weil Prozesse, Zuständigkeiten und Qualitätserwartungen auf manuelle Abläufe ausgelegt sind.
+
+Automatisierung verändert Rollenbilder und Entscheidungsprozesse. Wer bisher für Untertitel zuständig war, fragt sich, was mit der eigenen Stelle passiert. Wer Qualität bisher über manuelle Kontrolle definiert hat, muss lernen, Stichproben und Ausnahmen zu managen statt jeden Einzelfall zu prüfen. In öffentlich finanzierten Organisationen ist diese Veränderung besonders sensibel, weil sie direkt mit Arbeitsplätzen und politischer Wahrnehmung verknüpft ist.
+
+Gleichzeitig würde ein reduziertes Budget Automatisierung faktisch zur Voraussetzung machen. Die Frage ist nicht ob, sondern wie: als erzwungener Kahlschlag oder als gestalteter Übergang.
 
 ## Mehrsprachigkeit zwischen Technik und Organisation
 
 Die Mehrsprachigkeit der Schweiz ist eine besondere Herausforderung. Technisch lassen sich Inhalte heute effizient übersetzen und adaptieren. Organisatorisch wird Mehrsprachigkeit jedoch oft weiterhin als parallele Produktion verstanden.
+
+Ein Beispiel: Dieselbe Nachricht wird heute oft in jeder Sprachregion separat aufbereitet – eigene Übersetzung, eigene Grafiken, eigene Moderation. Technisch wäre es möglich, gemeinsame Elemente zentral zu erstellen und nur die sprachspezifische Ebene lokal anzupassen. Wo genau die Balance zwischen Effizienz und regionaler Eigenständigkeit liegt, ist eine politische Frage – aber die technischen Möglichkeiten dafür existieren längst.
 
 Das führt zu redundanten Strukturen. Ein stärker plattformorientierter Ansatz könnte gemeinsame Inhalte ermöglichen, die sprachspezifisch angepasst werden. Technisch machbar, politisch sensibel.
 
@@ -86,9 +96,17 @@ Die Herausforderung besteht darin, Daten zu nutzen, ohne redaktionelle Unabhäng
 
 ## Die Halbierungsinitiative als Architekturfrage
 
-Am Ende ist die Halbierungsinitiative weniger eine finanzielle als eine architektonische Frage. Sie zwingt dazu, Systeme, Prozesse und Annahmen neu zu bewerten.
+Am Ende ist die Halbierungsinitiative weniger eine finanzielle als eine architektonische Frage. Sie zwingt dazu, Systeme, Prozesse und Annahmen neu zu bewerten, und zwar nicht abstrakt, sondern konkret.
 
-Welche Strukturen sind Kerninfrastruktur? Welche sind historisch gewachsen? Wo kann Technik wirklich Effizienz bringen, ohne Qualität zu verlieren?
+Eine Budgetreduktion um fünfzig Prozent lässt sich nicht durch Einsparungen an den Rändern erreichen. Sie erfordert grundlegende Entscheidungen darüber, was der Kern des Auftrags ist und was historisch gewachsene Erweiterung. Das ist unangenehm, weil es bedeutet, lieb gewonnene Formate, Strukturen und Gewohnheiten in Frage zu stellen.
+
+Welche Strukturen sind tatsächlich Kerninfrastruktur? Information, Einordnung, demokratische Öffentlichkeit, das sind Funktionen, die kaum jemand ernsthaft bestreitet. Aber gehört dazu ein lineares Vollprogramm mit Unterhaltung, Sport und Fiction? Oder wäre eine fokussierte digitale Grundversorgung nicht zeitgemässer?
+
+Welche Strukturen sind historisch gewachsen? Vieles, was heute selbstverständlich erscheint, entstand in einer Zeit, als Rundfunk das einzige elektronische Massenmedium war. Eigene Orchester, eigene Archive, eigene Produktionsstudios für jede Sprachregion, all das hatte einmal gute Gründe. Ob diese Gründe heute noch gelten, wird selten gefragt.
+
+Wo kann Technik wirklich Effizienz bringen, ohne Qualität zu verlieren? Das ist die entscheidende Frage. Automatisierung, Modularisierung und Plattformdenken können Ressourcen freisetzen, aber nur wenn sie konsequent umgesetzt werden. Halbherzige Digitalisierung, bei der neue Systeme parallel zu alten betrieben werden, kostet mehr statt weniger.
+
+Die Halbierungsinitiative ist in diesem Sinne weniger ein konkreter Sparvorschlag als ein Gedankenexperiment: Was würde passieren, wenn man das System unter maximalen Druck setzt? Welche Strukturen würden überleben, welche zusammenbrechen? Und was sagt das über ihre tatsächliche Notwendigkeit aus?
 
 ## Fazit – warum diese Debatte notwendig ist, auch ohne einfache Antworten
 

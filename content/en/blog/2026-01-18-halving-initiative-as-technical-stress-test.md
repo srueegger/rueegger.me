@@ -54,9 +54,13 @@ Technically, a clean metadata strategy would be relatively easy to implement –
 
 The break between technology and organization becomes particularly visible with social media channels. An example is **SRF Impact** on TikTok. The content is short, quickly consumable, and optimized for algorithmic visibility. Some of it achieves very high reach.
 
-Technically, such channels work fundamentally differently than classic television. Timeliness beats perfection, production cycles are extremely short, reactions happen in real-time. At the same time, these channels are often connected to classic editorial teams.
+Technically, such channels work fundamentally differently than classic television. A TikTok video has to convince in the first two seconds, otherwise users swipe away. The algorithm rewards reactions, not broadcast times. What works shows up in real-time, and what doesn't work disappears into the noise.
 
-This creates tensions. Approval processes, responsibilities, and quality controls come from a world that wasn't built for seconds-long content. The technology is modern; the structure often isn't.
+For traditional editorial teams, this is an adjustment. On television, a segment is broadcast once, then it's done. On social media, a topic lives on: it gets commented on, shared, criticized, sometimes for days. This requires not only different content but also different response times. If you react to a viral moment the next day, you've missed it.
+
+At the same time, these channels are often connected to classic editorial teams. This creates tensions. Approval processes, responsibilities, and quality controls come from a world that wasn't built for seconds-long content. If a TikTok video has to go through three hierarchy levels before publication, the moment is over.
+
+The technology is modern; the structure often isn't. This doesn't mean quality control is unnecessary, but it has to work differently. Less pre-approval, more trust in teams, clearer guardrails instead of case-by-case decisions.
 
 ## Legacy Systems and Technical Debt
 
@@ -70,11 +74,17 @@ Massive budget pressure would make these weaknesses visible—not because techno
 
 Automated transcription, subtitling, translation, content classification, or archiving have long been technically possible. The biggest hurdle lies not in the technology but in acceptance.
 
-Automation changes role models and decision-making processes. In publicly funded organizations, this change is particularly sensitive. At the same time, a reduced budget would effectively make automation a prerequisite.
+An example: Automatic subtitling is now so mature that it works in real-time. For a 30-minute program, this saves several hours of manual work. The same applies to transcripts, which used to be laboriously created and now are available via speech recognition in minutes. Yet many of these tasks are still done by hand, not because the technology fails, but because processes, responsibilities, and quality expectations are designed for manual workflows.
+
+Automation changes role models and decision-making processes. Those who were previously responsible for subtitles wonder what will happen to their position. Those who previously defined quality through manual control must learn to manage spot checks and exceptions instead of reviewing every single case. In publicly funded organizations, this change is particularly sensitive because it is directly linked to jobs and political perception.
+
+At the same time, a reduced budget would effectively make automation a prerequisite. The question is not whether, but how: as a forced clear-cut or as a managed transition.
 
 ## Multilingualism Between Technology and Organization
 
 Switzerland's multilingualism is a special challenge. Technically, content can now be efficiently translated and adapted. Organizationally, multilingualism is often still understood as parallel production.
+
+An example: The same news story is often prepared separately in each language region today – separate translation, separate graphics, separate presentation. Technically, it would be possible to create shared elements centrally and only adapt the language-specific layer locally. Where exactly the balance lies between efficiency and regional autonomy is a political question – but the technical possibilities have long existed.
 
 This leads to redundant structures. A more platform-oriented approach could enable shared content that is adapted language-specifically. Technically feasible, politically sensitive.
 
@@ -86,9 +96,17 @@ The challenge is to use data without jeopardizing editorial independence or data
 
 ## The Halving Initiative as an Architectural Question
 
-In the end, the halving initiative is less a financial than an architectural question. It forces a reassessment of systems, processes, and assumptions.
+In the end, the halving initiative is less a financial than an architectural question. It forces a reassessment of systems, processes, and assumptions, not abstractly, but concretely.
 
-Which structures are core infrastructure? Which have historically grown? Where can technology really bring efficiency without losing quality?
+A fifty percent budget reduction cannot be achieved through savings at the margins. It requires fundamental decisions about what constitutes the core of the mandate and what represents historically grown extensions. This is uncomfortable because it means questioning cherished formats, structures, and habits.
+
+Which structures are actually core infrastructure? Information, context, democratic public sphere, these are functions that hardly anyone seriously disputes. But does this include a linear full-service program with entertainment, sports, and fiction? Or would a focused digital basic provision be more contemporary?
+
+Which structures have historically grown? Much of what seems self-evident today originated in an era when broadcasting was the only electronic mass medium. Dedicated orchestras, dedicated archives, dedicated production studios for each language region, all of this once had good reasons. Whether these reasons still apply today is rarely asked.
+
+Where can technology really bring efficiency without losing quality? This is the crucial question. Automation, modularization, and platform thinking can free up resources, but only when implemented consistently. Half-hearted digitalization, where new systems are operated parallel to old ones, costs more rather than less.
+
+In this sense, the halving initiative is less a concrete savings proposal than a thought experiment: What would happen if the system were put under maximum pressure? Which structures would survive, which would collapse? And what does that say about their actual necessity?
 
 ## Conclusion – Why This Debate Is Necessary, Even Without Easy Answers
 
