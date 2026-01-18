@@ -35,8 +35,15 @@ $pageTitle = ($meta['title'] ?? 'Blog Post') . ' - Samuel Rüegger';
 $metaDescription = $meta['excerpt'] ?? '';
 $metaKeywords = isset($meta['tags']) && is_array($meta['tags']) ? implode(', ', $meta['tags']) : '';
 
-// OG and Twitter meta tags
-$ogImage = isset($meta['image']) && $meta['image'] ? $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'] . $meta['image'] : $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'] . '/media/generated/images/samuel-rueegger-1200w.jpeg';
+// OG and Twitter meta tags - convert image path to generated JPEG for social sharing
+$ogImage = $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'] . '/media/generated/images/samuel-rueegger-1200w.jpeg';
+if (isset($meta['image']) && $meta['image']) {
+    // Convert /images/blog/name.png to /media/generated/images/blog/name-1200w.jpeg
+    $imagePath = $meta['image'];
+    if (preg_match('#^/images/(.+)\.(png|jpg|jpeg|webp)$#i', $imagePath, $matches)) {
+        $ogImage = $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'] . '/media/generated/images/' . $matches[1] . '-1200w.jpeg';
+    }
+}
 $ogUrl = $_SERVER['REQUEST_SCHEME'] . '://' . $_SERVER['HTTP_HOST'] . $_SERVER['REQUEST_URI'];
 $ogType = 'article';
 $articlePublishedTime = isset($meta['date']) ? date('c', strtotime($meta['date'])) : '';
