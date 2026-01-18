@@ -3,10 +3,10 @@ title: "The Halving Initiative as a Technical Stress Test for Public Service Med
 date: "2026-01-18"
 excerpt: "The so-called halving initiative demands a fifty percent reduction in SRG's budget. While politically controversial, from a technical perspective it acts like a radical load test on a media system that structurally belongs to a different era."
 tags: ["SRG", "Public Service", "Media", "Digitalization", "Switzerland", "Politics"]
-image: "/media/blog/halbierungsinitiative.jpg"
+image: "/images/blog/halbierungsinitiative-beitragsbild.png"
 ---
 
-The so-called halving initiative demands a fifty percent reduction in SRG's budget. Politically, this demand is highly controversial. From a technical perspective, however, it acts like a radical load test on a media system that structurally belongs to a different era.
+The so-called halving initiative demands a fifty percent reduction in **SRG's** budget. Politically, this demand is highly controversial. From a technical perspective, however, it acts like a radical load test on a media system that structurally belongs to a different era.
 
 The central question is not whether fifty percent is realistic, but what happens when you put the existing system under maximum efficiency pressure.
 
@@ -20,7 +20,7 @@ SRG today moves between these two worlds. Technically, platforms, media librarie
 
 ## Linear Thinking Using the Example of a Classic TV Show
 
-A good example of this is Tagesschau. Editorially, it clearly fulfills the public service mandate: information, context, and reliability. Technically, however, the classic broadcast logic is very evident here.
+A good example of this is the **Tagesschau**. Editorially, it clearly fulfills the public service mandate: information, context, and reliability. Technically, however, the classic broadcast logic is very evident here.
 
 Production is strongly oriented toward fixed broadcast times, defined segment lengths, and predetermined dramaturgy. Segments are primarily produced for linear broadcast. Only afterward does secondary use for media libraries, websites, or social media occur.
 
@@ -34,7 +34,7 @@ Digital players massively reduce their effort this way. They produce once and pl
 
 ## Podcasts as Digital-First, But Not Always Process-First
 
-Podcasts are often cited as evidence that SRG has arrived in the digital world. An example is the podcast "Sykophanten." The format is thematically focused, clearly digital-first, and specifically targets a younger audience.
+Podcasts are often cited as evidence that SRG has arrived in the digital world. An example is **Input**. The format is thematically focused, clearly digital-first, and specifically targets a younger audience.
 
 Technically, podcasts are comparatively efficient. They require little infrastructure, no broadcast slots, and are flexible in timing. At the same time, many of these productions are still organizationally treated like classic broadcasts, with similar approval processes, committees, and decision-making paths.
 
@@ -48,7 +48,7 @@ In many historically grown systems, metadata is maintained more as an afterthoug
 
 ## Social Media and Platform Logic
 
-The break between technology and organization becomes particularly visible with social media channels. An example is SRF on TikTok. The content is short, quickly consumable, and optimized for algorithmic visibility. Some of it achieves very high reach.
+The break between technology and organization becomes particularly visible with social media channels. An example is **SRF Impact** on TikTok. The content is short, quickly consumable, and optimized for algorithmic visibility. Some of it achieves very high reach.
 
 Technically, such channels work fundamentally differently than classic television. Timeliness beats perfection, production cycles are extremely short, reactions happen in real-time. At the same time, these channels are often connected to classic editorial teams.
 

@@ -3,10 +3,10 @@ title: "Die Halbierungsinitiative als technischer Stresstest für den Service pu
 date: "2026-01-18"
 excerpt: "Die sogenannte Halbierungsinitiative fordert eine Reduktion des SRG-Budgets um fünfzig Prozent. Politisch umstritten, wirkt sie technisch betrachtet wie ein radikaler Lasttest auf ein Mediensystem, das strukturell aus einer anderen Epoche stammt."
 tags: ["SRG", "Service Public", "Medien", "Digitalisierung", "Schweiz", "Politik"]
-image: "/media/blog/halbierungsinitiative.jpg"
+image: "/images/blog/halbierungsinitiative-beitragsbild.png"
 ---
 
-Die sogenannte Halbierungsinitiative fordert eine Reduktion des Budgets der SRG um fünfzig Prozent. Politisch ist diese Forderung stark umstritten. Technisch betrachtet wirkt sie jedoch wie ein radikaler Lasttest auf ein Mediensystem, das strukturell aus einer anderen Epoche stammt.
+Die sogenannte Halbierungsinitiative fordert eine Reduktion des Budgets der **SRG** um fünfzig Prozent. Politisch ist diese Forderung stark umstritten. Technisch betrachtet wirkt sie jedoch wie ein radikaler Lasttest auf ein Mediensystem, das strukturell aus einer anderen Epoche stammt.
 
 Die zentrale Frage lautet nicht, ob fünfzig Prozent realistisch sind, sondern was passiert, wenn man das bestehende System unter maximalen Effizienzdruck setzt.
 
@@ -20,7 +20,7 @@ Die SRG bewegt sich heute zwischen diesen beiden Welten. Technisch existieren Pl
 
 ## Lineares Denken am Beispiel einer klassischen TV-Sendung
 
-Ein gutes Beispiel dafür ist die Tagesschau. Redaktionell erfüllt sie klar den Service-public-Auftrag: Information, Einordnung und Verlässlichkeit. Technisch zeigt sich hier jedoch sehr deutlich die klassische Rundfunklogik.
+Ein gutes Beispiel dafür ist die **Tagesschau**. Redaktionell erfüllt sie klar den Service-public-Auftrag: Information, Einordnung und Verlässlichkeit. Technisch zeigt sich hier jedoch sehr deutlich die klassische Rundfunklogik.
 
 Die Produktion ist stark auf fixe Sendetermine, definierte Beitragslängen und eine vorgegebene Dramaturgie ausgerichtet. Beiträge werden primär für die lineare Ausstrahlung produziert. Erst danach erfolgt die Zweitverwertung für Mediathek, Website oder Social Media.
 
@@ -34,7 +34,7 @@ Digitale Akteure reduzieren so ihren Aufwand massiv. Sie produzieren einmal und 
 
 ## Podcasts als digital-first, aber nicht immer prozess-first
 
-Podcasts gelten oft als Beleg dafür, dass die SRG im Digitalen angekommen ist. Ein Beispiel dafür ist der Podcast «Sykophanten». Das Format ist thematisch fokussiert, klar digital-first und spricht gezielt ein jüngeres Publikum an.
+Podcasts gelten oft als Beleg dafür, dass die SRG im Digitalen angekommen ist. Ein Beispiel dafür ist **Input**. Das Format ist thematisch fokussiert, klar digital-first und spricht gezielt ein jüngeres Publikum an.
 
 Technisch sind Podcasts vergleichsweise effizient. Sie benötigen wenig Infrastruktur, keine Sendeflächen und sind zeitlich flexibel. Gleichzeitig werden viele dieser Produktionen organisatorisch weiterhin wie klassische Sendungen behandelt, mit ähnlichen Freigabeprozessen, Gremien und Entscheidungswegen.
 
@@ -48,7 +48,7 @@ In vielen historisch gewachsenen Systemen werden Metadaten eher nachgelagert gep
 
 ## Social Media und die Logik der Plattformen
 
-Besonders sichtbar wird der Bruch zwischen Technik und Organisation bei Social-Media-Kanälen. Ein Beispiel ist SRF auf TikTok. Die Inhalte sind kurz, schnell konsumierbar und auf algorithmische Sichtbarkeit optimiert. Teilweise erreichen sie sehr hohe Reichweiten.
+Besonders sichtbar wird der Bruch zwischen Technik und Organisation bei Social-Media-Kanälen. Ein Beispiel ist **SRF Impact** auf TikTok. Die Inhalte sind kurz, schnell konsumierbar und auf algorithmische Sichtbarkeit optimiert. Teilweise erreichen sie sehr hohe Reichweiten.
 
 Technisch funktionieren solche Kanäle fundamental anders als klassisches Fernsehen. Aktualität schlägt Perfektion, Produktionszyklen sind extrem kurz, Reaktionen erfolgen in Echtzeit. Gleichzeitig sind diese Kanäle oft an klassische Redaktionen angebunden.
 
